@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-contact-item',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactItemComponent implements OnInit {
 
+  private _iconName = '';
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  get iconName(): string {
+    return this._iconName;
+  }
+
+  @Input('iconName')
+  set iconName(value: string) {
+    this._iconName = value;
   }
 
 }

@@ -1,18 +1,21 @@
-.box:before, .box:after {
+.box:after,
+.box:before {
   display: table;
   content: "";
   line-height: 0;
 }
+
 .box:after {
   clear: both;
 }
+
 .box_aside {
   float: left;
 }
+
 .box_cnt__no-flow {
   overflow: hidden;
 }
-
 
 .icon {
   position: relative;
@@ -28,6 +31,7 @@
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
+
 .icon:before {
   position: absolute;
   top: 0;
@@ -46,10 +50,40 @@
   color: #62bfe6;
   background: #4a4c4d;
 }
+
 .icon2:before {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.contact-item {
+  color: #888a8c;
+  font-size: 16px;
+
+  .box {
+    display: table;
+  }
+
+  .box_cnt__no-flow {
+    vertical-align: middle;
+    display: table-cell;
+    padding-left: 30px;
+  }
+
+  a[href^="callto:"] {
+    font-size: 24px;
+  }
+
+  a[href^="callto:"] {
+    @media (min-width: 768px) and (max-width: 979px) {
+      font-size: 18px;
+    }
+  }
+
+  a:hover {
+    color: #62bfe6;
+  }
 }
