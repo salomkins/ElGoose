@@ -20,6 +20,7 @@ header .container > p {
 header a[href^="callto:"] {
   margin-top: 7px;
   position: relative;
+  font: inherit;
   font-size: 24px;
   color: #777777;
 }
