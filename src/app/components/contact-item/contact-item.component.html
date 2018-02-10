@@ -9,7 +9,7 @@
       <address *ngIf="tag == 'address'">
         <ng-container *ngTemplateOutlet="content"></ng-container>
       </address>
-      <a href="{{href}}" *ngIf="tag == 'a'">
+      <a href="{{link}}" *ngIf="tag == 'a'">
         <ng-container *ngTemplateOutlet="content"></ng-container>
       </a>
       <ng-template #content>

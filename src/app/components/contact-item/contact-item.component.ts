@@ -9,7 +9,7 @@ export class ContactItemComponent implements OnInit {
 
   private _iconName = '';
   private _tag = '';
-  private _href = '';
+  private _link = '';
 
   constructor() { }
 
@@ -31,13 +31,13 @@ export class ContactItemComponent implements OnInit {
   set tag(value: string) {
     this._tag = value;
   }
-  get href(): string {
-    return this._href;
+  get link(): string {
+    return this._link;
   }
 
-  @Input('href')
-  set href(value: string) {
-    this._href = value;
+  @Input('link')
+  set link(value: string) {
+    this._link = value;
   }
 
 }

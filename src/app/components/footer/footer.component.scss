@@ -9,13 +9,16 @@ footer {
   color: #888a8c;
   background: #434547;
 }
+
 footer section + section .container {
   border-top: 1px solid #888a8c;
 }
+
 footer .copyright {
   padding-top: 21px;
   padding-bottom: 55px;
 }
+
 footer .copyright a:hover {
   text-decoration: underline;
 }
@@ -23,107 +26,6 @@ footer .copyright a:hover {
   footer .copyright {
     text-align: center;
   }
-}
-
-.icon {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-  font-size: 52px;
-  text-align: center;
-  color: #fff;
-  background: #62bfe6;
-  -moz-transition: 0.3s all ease;
-  -o-transition: 0.3s all ease;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-}
-.icon:before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.icon2 {
-  position: relative;
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
-  font-size: 34px;
-  text-align: center;
-  color: #62bfe6;
-  background: #4a4c4d;
-}
-.icon2:before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.box:before, .box:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.box:after {
-  clear: both;
-}
-.box_aside {
-  float: left;
-}
-.box_cnt__no-flow {
-  overflow: hidden;
-}
-
-.contact-list {
-  color: #888a8c;
-  font-size: 16px;
-}
-.contact-list .box {
-  display: table;
-}
-.contact-list .box_cnt__no-flow {
-  vertical-align: middle;
-  display: table-cell;
-  padding-left: 30px;
-}
-.contact-list .box + .box {
-  margin-top: 30px;
-}
-.contact-list a[href^="callto:"] {
-  font-size: 24px;
-}
-@media (min-width: 768px) and (max-width: 979px) {
-  .contact-list a[href^="callto:"] {
-    font-size: 18px;
-  }
-}
-.contact-list a:hover {
-  color: #62bfe6;
-}
-
-.contact-list2 {
-  padding-top: 23px;
-  padding-bottom: 2px;
-}
-.contact-list2 h3 {
-  color: #42acda;
-}
-.contact-list2 a[href^="callto:"] {
-  font-size: 24px;
-  line-height: 28px;
-}
-.contact-list2 dd, .contact-list2 dt {
-  display: inline-block;
-  font-size: 16px;
-}
-.contact-list2 a + dl {
-  margin-top: 9px;
 }
 
 .well3 {
