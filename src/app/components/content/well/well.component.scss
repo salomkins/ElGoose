@@ -1,0 +1,92 @@
+:host {
+  display: block;
+}
+
+.well {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.ins1 {
+  padding-bottom: 0;
+}
+.container.hr {
+  padding-bottom: 50px;
+}
+
+/*==============      Product List     ==================*/
+.product-list li .box:hover .icon {
+  background: #57aacd;
+}
+.product-list li .box_cnt__no-flow {
+  padding-left: 30px;
+}
+.product-list * + hr {
+  margin-top: 50px;
+}
+.product-list hr + * {
+  margin-top: 50px;
+}
+.product-list h3 + p {
+  margin-top: 6px;
+}
+@media (max-width: 767px) {
+  .product-list hr {
+    display: none;
+  }
+  .product-list hr + * {
+    margin-top: 30px;
+  }
+  .product-list li .box {
+    text-align: center;
+  }
+  .product-list li .box_aside {
+    float: none;
+  }
+  .product-list li .box_aside .icon {
+    display: inline-block;
+  }
+  .product-list li .box_cnt__no-flow {
+    margin-top: 20px;
+    padding-left: 0;
+  }
+}
+
+
+/*==================      Box      ======================*/
+.box:before, .box:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.box:after {
+  clear: both;
+}
+.box_aside {
+  float: left;
+}
+.box_cnt__no-flow {
+  overflow: hidden;
+}
+
+/*==================     Icons     ======================*/
+.icon {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 52px;
+  text-align: center;
+  color: #fff;
+  background: #62bfe6;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+.icon:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

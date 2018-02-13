@@ -10,6 +10,7 @@ import { ContactItemComponent } from './components/contact-item/contact-item.com
 import { ContentComponent } from './components/content/content.component';
 import { CameraComponent } from './components/content/camera/camera.component';
 import { BannerComponent } from './components/content/banner/banner.component';
+import { WellComponent } from './components/content/well/well.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { BannerComponent } from './components/content/banner/banner.component';
     ContactItemComponent,
     ContentComponent,
     CameraComponent,
-    BannerComponent
+    BannerComponent,
+    WellComponent
   ],
   imports: [
     BrowserModule
