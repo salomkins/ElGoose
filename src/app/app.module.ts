@@ -11,6 +11,7 @@ import { ContentComponent } from './components/content/content.component';
 import { CameraComponent } from './components/content/camera/camera.component';
 import { BannerComponent } from './components/content/banner/banner.component';
 import { WellComponent } from './components/content/well/well.component';
+import { Well1Component } from './components/content/well1/well1.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { WellComponent } from './components/content/well/well.component';
     ContentComponent,
     CameraComponent,
     BannerComponent,
-    WellComponent
+    WellComponent,
+    Well1Component
   ],
   imports: [
     BrowserModule
