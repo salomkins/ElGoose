@@ -12,6 +12,7 @@ import { CameraComponent } from './components/content/camera/camera.component';
 import { BannerComponent } from './components/content/banner/banner.component';
 import { WellComponent } from './components/content/well/well.component';
 import { Well1Component } from './components/content/well1/well1.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { Well1Component } from './components/content/well1/well1.component';
     Well1Component
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
