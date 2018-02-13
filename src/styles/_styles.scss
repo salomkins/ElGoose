@@ -1,6 +1,66 @@
 /*==========================================================
                         GLOGAL STYLES
 ==========================================================*/
+/*========================================================
+					  Main Styles
+=========================================================*/
+body {
+  background: #f5f5f5;
+  color: #56585a;
+  font: 400 14px/28px "Roboto", sans-serif;
+  -webkit-text-size-adjust: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #434547;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #62bfe6;
+}
+
+h1 {
+  font-size: 38px;
+  line-height: 42px;
+}
+
+h2 {
+  font-size: 34px;
+  line-height: 38px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 38px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+p a:hover, .list a:hover {
+  text-decoration: underline;
+}
+p .fa, .list .fa {
+  text-decoration: none;
+}
+
+time {
+  display: block;
+}
+
 a {
   font: inherit;
   color: inherit;
@@ -21,4 +81,138 @@ a[href^="tel:"],
 a[href^="callto:"] {
   color: inherit;
   text-decoration: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.fa {
+  line-height: inherit;
+}
+
+[class*='fa-']:before {
+  font-weight: 400;
+  font-family: "FontAwesome";
+}
+
+.page {
+  overflow: hidden;
+  min-height: 500px;
+}
+.lt-ie9 .page {
+  min-width: 1200px;
+}
+
+hr {
+  border: none;
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+.hr {
+  border-bottom: 3px solid #62bfe6;
+}
+
+@media (max-width: 767px) {
+  .mobile-center {
+    text-align: center;
+  }
+}
+
+.mg-add {
+  margin-top: 18px;
+}
+
+/*=======================================================
+					   Main Layout
+=========================================================*/
+* + .btn {
+  margin-top: 32px;
+}
+
+* + .row {
+  margin-top: 18px;
+}
+
+* + .off1 {
+  margin-top: 13px;
+}
+
+* + .off2 {
+  margin-top: 24px;
+}
+
+* + .off3 {
+  margin-top: 32px;
+}
+
+* + .off4 {
+  margin-top: 4px;
+}
+
+.info-box + .owl-carousel {
+  margin-top: 30px;
+}
+
+h2 + img {
+  margin-top: 23px;
+}
+
+h2 + p {
+  margin-top: 14px;
+}
+
+h3 + p {
+  margin-top: 12px;
+}
+
+* + hr {
+  margin-top: 40px;
+}
+
+.row + p {
+  margin-top: 25px;
+}
+
+hr + * {
+  margin-top: 40px;
+}
+
+img + p {
+  margin-top: 22px;
+}
+
+img + h3 {
+  margin-top: 20px;
+}
+
+.marked-list + .btn {
+  margin-top: 17px;
+}
+
+.grid_2 img + img {
+  margin-top: 30px;
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .grid_2 img + img {
+    margin-top: 0;
+    margin-left: 8%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .grid_2 img {
+    width: 46%;
+  }
+}
+
+.off2 + hr,
+.off2 + hr + .row {
+  margin-top: 50px;
+}
+
+p + .btn_wr {
+  margin-top: 33px;
 }

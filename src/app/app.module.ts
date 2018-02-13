@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContactItemComponent } from './components/contact-item/contact-item.component';
 import { ContentComponent } from './components/content/content.component';
 import { CameraComponent } from './components/content/camera/camera.component';
+import { BannerComponent } from './components/content/banner/banner.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CameraComponent } from './components/content/camera/camera.component';
     NavbarComponent,
     ContactItemComponent,
     ContentComponent,
-    CameraComponent
+    CameraComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule
