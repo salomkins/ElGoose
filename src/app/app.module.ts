@@ -20,6 +20,7 @@ import { ContentAboutComponent } from './components/content-about/content-about.
 import { FactsComponent } from './components/content-about/facts/facts.component';
 import { WeAreComponent } from './components/content-about/we-are/we-are.component';
 import { AwardsComponent } from './components/content-about/awards/awards.component';
+import { SkillsComponent } from './components/content-about/skills/skills.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { AwardsComponent } from './components/content-about/awards/awards.compon
     FactsComponent,
     WeAreComponent,
     AwardsComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule
