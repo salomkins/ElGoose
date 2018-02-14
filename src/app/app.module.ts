@@ -18,6 +18,7 @@ import { CanHelpComponent } from './components/content-services/can-help/can-hel
 import { PriceListComponent } from './components/content-services/price-list/price-list.component';
 import { ContentAboutComponent } from './components/content-about/content-about.component';
 import { FactsComponent } from './components/content-about/facts/facts.component';
+import { WeAreComponent } from './components/content-about/we-are/we-are.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { FactsComponent } from './components/content-about/facts/facts.component
     PriceListComponent,
     ContentAboutComponent,
     FactsComponent,
+    WeAreComponent,
   ],
   imports: [
     BrowserModule
