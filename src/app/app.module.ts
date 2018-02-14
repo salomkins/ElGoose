@@ -23,10 +23,10 @@ import { AppRoutingModule } from './app-routing.module';
     NavbarComponent,
     ContactItemComponent,
     ContentComponent,
-    CameraComponent,
-    BannerComponent,
-    WellComponent,
-    Well1Component
+    // CameraComponent,
+    // BannerComponent,
+    // WellComponent,
+    // Well1Component
   ],
   imports: [
     BrowserModule,
