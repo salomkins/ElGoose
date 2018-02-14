@@ -19,6 +19,7 @@ import { PriceListComponent } from './components/content-services/price-list/pri
 import { ContentAboutComponent } from './components/content-about/content-about.component';
 import { FactsComponent } from './components/content-about/facts/facts.component';
 import { WeAreComponent } from './components/content-about/we-are/we-are.component';
+import { AwardsComponent } from './components/content-about/awards/awards.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { WeAreComponent } from './components/content-about/we-are/we-are.compone
     ContentAboutComponent,
     FactsComponent,
     WeAreComponent,
+    AwardsComponent,
   ],
   imports: [
     BrowserModule
