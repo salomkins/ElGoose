@@ -16,6 +16,7 @@ import { ContentServicesComponent } from './components/content-services/content-
 import { MobileCenterComponent } from './components/content-services/mobile-center/mobile-center.component';
 import { CanHelpComponent } from './components/content-services/can-help/can-help.component';
 import { PriceListComponent } from './components/content-services/price-list/price-list.component';
+import { ContentAboutComponent } from './components/content-about/content-about.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { PriceListComponent } from './components/content-services/price-list/pri
     MobileCenterComponent,
     CanHelpComponent,
     PriceListComponent,
+    ContentAboutComponent,
   ],
   imports: [
     BrowserModule
