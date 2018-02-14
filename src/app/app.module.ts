@@ -15,6 +15,7 @@ import { Well1Component } from './components/content/well1/well1.component';
 import { ContentServicesComponent } from './components/content-services/content-services.component';
 import { MobileCenterComponent } from './components/content-services/mobile-center/mobile-center.component';
 import { CanHelpComponent } from './components/content-services/can-help/can-help.component';
+import { PriceListComponent } from './components/content-services/price-list/price-list.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CanHelpComponent } from './components/content-services/can-help/can-hel
     ContentServicesComponent,
     MobileCenterComponent,
     CanHelpComponent,
+    PriceListComponent,
   ],
   imports: [
     BrowserModule
