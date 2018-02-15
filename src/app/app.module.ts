@@ -22,6 +22,11 @@ import { FactsComponent } from './components/content-about/facts/facts.component
 import { WeAreComponent } from './components/content-about/we-are/we-are.component';
 import { AwardsComponent } from './components/content-about/awards/awards.component';
 import { SkillsComponent } from './components/content-about/skills/skills.component';
+import { ContentFaqsComponent } from './components/content-faqs/content-faqs.component';
+import { AnswersComponent } from './components/content-faqs/answers/answers.component';
+import { SupportComponent } from './components/content-faqs/support/support.component';
+import { AdditionalInfoComponent } from './components/content-faqs/additional-info/additional-info.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +48,10 @@ import { SkillsComponent } from './components/content-about/skills/skills.compon
     WeAreComponent,
     AwardsComponent,
     SkillsComponent,
+    ContentFaqsComponent,
+    AnswersComponent,
+    SupportComponent,
+    AdditionalInfoComponent,
   ],
   imports: [
     BrowserModule,
