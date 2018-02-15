@@ -23,6 +23,7 @@ import { AwardsComponent } from './components/content-about/awards/awards.compon
 import { SkillsComponent } from './components/content-about/skills/skills.component';
 import { ContentFaqsComponent } from './components/content-faqs/content-faqs.component';
 import { AnswersComponent } from './components/content-faqs/answers/answers.component';
+import { SupportComponent } from './components/content-faqs/support/support.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { AnswersComponent } from './components/content-faqs/answers/answers.comp
     SkillsComponent,
     ContentFaqsComponent,
     AnswersComponent,
+    SupportComponent,
   ],
   imports: [
     BrowserModule
