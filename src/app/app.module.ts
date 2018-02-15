@@ -22,6 +22,7 @@ import { WeAreComponent } from './components/content-about/we-are/we-are.compone
 import { AwardsComponent } from './components/content-about/awards/awards.component';
 import { SkillsComponent } from './components/content-about/skills/skills.component';
 import { ContentFaqsComponent } from './components/content-faqs/content-faqs.component';
+import { AnswersComponent } from './components/content-faqs/answers/answers.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { ContentFaqsComponent } from './components/content-faqs/content-faqs.com
     AwardsComponent,
     SkillsComponent,
     ContentFaqsComponent,
+    AnswersComponent,
   ],
   imports: [
     BrowserModule
