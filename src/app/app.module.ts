@@ -24,6 +24,7 @@ import { SkillsComponent } from './components/content-about/skills/skills.compon
 import { ContentFaqsComponent } from './components/content-faqs/content-faqs.component';
 import { AnswersComponent } from './components/content-faqs/answers/answers.component';
 import { SupportComponent } from './components/content-faqs/support/support.component';
+import { AdditionalInfoComponent } from './components/content-faqs/additional-info/additional-info.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { SupportComponent } from './components/content-faqs/support/support.comp
     ContentFaqsComponent,
     AnswersComponent,
     SupportComponent,
+    AdditionalInfoComponent,
   ],
   imports: [
     BrowserModule
