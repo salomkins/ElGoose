@@ -25,6 +25,7 @@ import { ContentFaqsComponent } from './components/content-faqs/content-faqs.com
 import { AnswersComponent } from './components/content-faqs/answers/answers.component';
 import { SupportComponent } from './components/content-faqs/support/support.component';
 import { AdditionalInfoComponent } from './components/content-faqs/additional-info/additional-info.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { AdditionalInfoComponent } from './components/content-faqs/additional-in
     AdditionalInfoComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
