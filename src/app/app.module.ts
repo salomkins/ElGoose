@@ -26,6 +26,7 @@ import { AnswersComponent } from './components/content-faqs/answers/answers.comp
 import { SupportComponent } from './components/content-faqs/support/support.component';
 import { AdditionalInfoComponent } from './components/content-faqs/additional-info/additional-info.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { AppRoutingModule } from './/app-routing.module';
     AnswersComponent,
     SupportComponent,
     AdditionalInfoComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,14 +7,21 @@ import { ContentAboutComponent } from './components/content-about/content-about.
 import { ContentServicesComponent } from './components/content-services/content-services.component';
 import { ContentFaqsComponent } from './components/content-faqs/content-faqs.component';
 
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
 const routes: Routes = [
   //{ path: 'home', loadChildren: 'app/pages/home/home.module#HomeModule' },
   //{ path: 'about', loadChildren: 'app/pages/about/about.module#AboutModule' }
   { path: '', component: ContentComponent },
-  { path: 'home', component: ContentComponent },
+  { path: 'home', redirectTo: '' },
+  //{ path: 'home', component: ContentComponent },
   { path: 'about', component: ContentAboutComponent },
   { path: 'services', component: ContentServicesComponent },
   { path: 'faqs', component: ContentFaqsComponent },
+
+
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '404' }
 ];
 
 @NgModule({
