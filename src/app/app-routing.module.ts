@@ -14,7 +14,6 @@ const routes: Routes = [
   //{ path: 'about', loadChildren: 'app/pages/about/about.module#AboutModule' }
   { path: '', component: ContentComponent },
   { path: 'home', redirectTo: '' },
-  //{ path: 'home', component: ContentComponent },
   { path: 'about', component: ContentAboutComponent },
   { path: 'services', component: ContentServicesComponent },
   { path: 'faqs', component: ContentFaqsComponent },
