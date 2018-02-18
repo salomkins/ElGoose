@@ -28,6 +28,7 @@ import { AdditionalInfoComponent } from './components/content-faqs/additional-in
 import { AppRoutingModule } from './/app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterContactsComponent } from './components/footer-contacts/footer-contacts.component';
+import { ContentContatsComponent } from './components/content-contats/content-contats.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { FooterContactsComponent } from './components/footer-contacts/footer-con
     AdditionalInfoComponent,
     NotFoundComponent,
     FooterContactsComponent,
+    ContentContatsComponent,
   ],
   imports: [
     BrowserModule,

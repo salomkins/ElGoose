@@ -6,6 +6,7 @@ import { ContentComponent } from './components/content/content.component';
 import { ContentAboutComponent } from './components/content-about/content-about.component';
 import { ContentServicesComponent } from './components/content-services/content-services.component';
 import { ContentFaqsComponent } from './components/content-faqs/content-faqs.component';
+import { ContentContatsComponent } from './components/content-contats/content-contats.component';
 
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'about', component: ContentAboutComponent },
   { path: 'services', component: ContentServicesComponent },
   { path: 'faqs', component: ContentFaqsComponent },
-
+  { path: 'contats', component: ContentContatsComponent },
 
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '404' }
