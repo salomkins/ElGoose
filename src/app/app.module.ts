@@ -29,6 +29,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterContactsComponent } from './components/footer-contacts/footer-contacts.component';
 import { ContentContatsComponent } from './components/content-contats/content-contats.component';
+import { MapComponent } from './components/content-contats/map/map.component';
+import { FeedbackComponent } from './components/content-contats/feedback/feedback.component';
 
 
 @NgModule({
@@ -59,6 +61,8 @@ import { ContentContatsComponent } from './components/content-contats/content-co
     NotFoundComponent,
     FooterContactsComponent,
     ContentContatsComponent,
+    MapComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
