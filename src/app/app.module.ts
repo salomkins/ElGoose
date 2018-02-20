@@ -31,6 +31,7 @@ import { FooterContactsComponent } from './components/footer-contacts/footer-con
 import { ContentContatsComponent } from './components/content-contats/content-contats.component';
 import { MapComponent } from './components/content-contats/map/map.component';
 import { FeedbackComponent } from './components/content-contats/feedback/feedback.component';
+import { ContentPrivacyComponent } from './components/content-privacy/content-privacy.component';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { FeedbackComponent } from './components/content-contats/feedback/feedbac
     ContentContatsComponent,
     MapComponent,
     FeedbackComponent,
+    ContentPrivacyComponent,
   ],
   imports: [
     BrowserModule,
