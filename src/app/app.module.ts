@@ -28,9 +28,9 @@ import { AdditionalInfoComponent } from './components/content-faqs/additional-in
 import { AppRoutingModule } from './/app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterContactsComponent } from './components/footer-contacts/footer-contacts.component';
-import { ContentContatsComponent } from './components/content-contats/content-contats.component';
-import { MapComponent } from './components/content-contats/map/map.component';
-import { FeedbackComponent } from './components/content-contats/feedback/feedback.component';
+//import { ContentContatsComponent } from './components/content-contats/content-contats.component';
+//import { MapComponent } from './components/content-contats/map/map.component';
+//import { FeedbackComponent } from './components/content-contats/feedback/feedback.component';
 //import { ContentPrivacyComponent } from './components/content-privacy/content-privacy.component';
 
 
@@ -61,9 +61,9 @@ import { FeedbackComponent } from './components/content-contats/feedback/feedbac
     AdditionalInfoComponent,
     NotFoundComponent,
     FooterContactsComponent,
-    ContentContatsComponent,
-    MapComponent,
-    FeedbackComponent,
+    //ContentContatsComponent,
+    //MapComponent,
+    //FeedbackComponent,
     //ContentPrivacyComponent,
   ],
   imports: [
