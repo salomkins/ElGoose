@@ -11,7 +11,10 @@ import { ContentFaqsComponent } from './components/content-faqs/content-faqs.com
 //import { ContentPrivacyComponent } from './components/content-privacy/content-privacy.component';
 
 import { NotFoundComponent } from './components/not-found/not-found.component';
+//
 import { ContentTestComponent } from './components/content-test/content-test.component';
+import { TestPage1Component } from './components/content-test/test-page-1/test-page-1.component';
+import { TestPage2Component } from './components/content-test/test-page-2/test-page-2.component';
 
 const routes: Routes = [
   { path: '', component: ContentComponent },
@@ -25,7 +28,11 @@ const routes: Routes = [
   { path: 'privacy', loadChildren: './components/content-privacy/content-privacy.module#ContentPrivacyModule' },
   { path: 'policy', redirectTo: 'privacy' },
   //
-  { path: 'test', component: ContentTestComponent }
+  { path: 'test', component: ContentTestComponent,
+   children: [
+     { path: 'page1', component: TestPage1Component },
+     { path: 'page2', component: TestPage2Component },
+     ]}
 ];
 const routes404: Routes = [
   { path: '404', component: NotFoundComponent },
