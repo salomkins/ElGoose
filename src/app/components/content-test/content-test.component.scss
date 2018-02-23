@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  background: #fff;
+}
+
+.container {
+  padding: 30px 0;
+}
+
+.btn-my
+{ display: inline-block;
+  width: 250px;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  background: #62bfe6;
+  margin-right:  20px;
+}
+
+.btn-my:hover {
+  background: #4ab5e2;
+}
+
+.btn-my:active {
+  background: #22a1d7;
+}
