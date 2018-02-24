@@ -7,7 +7,7 @@ import { ContentAboutComponent } from './components/content-about/content-about.
 import { ContentServicesComponent } from './components/content-services/content-services.component';
 import { ContentFaqsComponent } from './components/content-faqs/content-faqs.component';
 
-//import { ContentContatsComponent } from './components/content-contats/content-contats.component';
+//import { ContentContactsComponent } from './components/content-contacts/content-contacts.component';
 //import { ContentPrivacyComponent } from './components/content-privacy/content-privacy.component';
 
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -22,9 +22,9 @@ const routes: Routes = [
   { path: 'about', component: ContentAboutComponent },
   { path: 'services', component: ContentServicesComponent },
   { path: 'faqs', component: ContentFaqsComponent },
-  //{ path: 'contats', component: ContentContatsComponent },
+  //{ path: 'contacts', component: ContentContactsComponent },
   //{ path: 'privacy', component: ContentPrivacyComponent },
-  { path: 'contats', loadChildren: './components/content-contats/content-contats.module#ContentContatsModule' },
+  { path: 'contacts', loadChildren: './components/content-contacts/content-contacts.module#ContentContactsModule' },
   { path: 'privacy', loadChildren: './components/content-privacy/content-privacy.module#ContentPrivacyModule' },
   { path: 'policy', redirectTo: 'privacy' },
   //

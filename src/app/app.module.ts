@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ContactItemComponent } from './components/contact-item/contact-item.component';
+import { ContactItemComponent } from './components/footer-contacts/contact-item/contact-item.component';
 import { ContentComponent } from './components/content/content.component';
 import { CameraComponent } from './components/content/camera/camera.component';
 import { BannerComponent } from './components/content/banner/banner.component';
@@ -31,9 +31,9 @@ import { FooterContactsComponent } from './components/footer-contacts/footer-con
 import { ContentTestComponent } from './components/content-test/content-test.component';
 import { TestPage1Component } from './components/content-test/test-page-1/test-page-1.component';
 import { TestPage2Component } from './components/content-test/test-page-2/test-page-2.component';
-//import { ContentContatsComponent } from './components/content-contats/content-contats.component';
-//import { MapComponent } from './components/content-contats/map/map.component';
-//import { FeedbackComponent } from './components/content-contats/feedback/feedback.component';
+//import { ContentContactsComponent } from './components/content-contacts/content-contacts.component';
+//import { MapComponent } from './components/content-contacts/map/map.component';
+//import { FeedbackComponent } from './components/content-contacts/feedback/feedback.component';
 //import { ContentPrivacyComponent } from './components/content-privacy/content-privacy.component';
 
 
@@ -67,7 +67,7 @@ import { TestPage2Component } from './components/content-test/test-page-2/test-p
     ContentTestComponent,
     TestPage1Component,
     TestPage2Component,
-    //ContentContatsComponent,
+    //ContentContactsComponent,
     //MapComponent,
     //FeedbackComponent,
     //ContentPrivacyComponent,

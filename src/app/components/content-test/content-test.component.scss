@@ -7,8 +7,8 @@
   padding: 30px 0;
 }
 
-.btn-my
-{ display: inline-block;
+.btn-my {
+  display: inline-block;
   width: 250px;
   padding: 16px;
   font-size: 16px;
@@ -22,7 +22,12 @@
   color: #fff;
   background: #62bfe6;
   margin-bottom: 20px;
-  margin-right:  20px;
+  margin-right: 20px;
+  @media (max-width: 767px) {
+    display: block;
+    width: 80%;
+    margin: 0 auto 20px;
+  }
 }
 
 .btn-my:hover {
