@@ -28,9 +28,9 @@ import { AdditionalInfoComponent } from './components/content-faqs/additional-in
 import { AppRoutingModule } from './/app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterContactsComponent } from './components/footer-contacts/footer-contacts.component';
-import { ContentTestComponent } from './components/content-test/content-test.component';
-import { TestPage1Component } from './components/content-test/test-page-1/test-page-1.component';
-import { TestPage2Component } from './components/content-test/test-page-2/test-page-2.component';
+// import { ContentTestComponent } from './components/content-test/content-test.component';
+// import { TestPage1Component } from './components/content-test/test-page-1/test-page-1.component';
+// import { TestPage2Component } from './components/content-test/test-page-2/test-page-2.component';
 //import { ContentContactsComponent } from './components/content-contacts/content-contacts.component';
 //import { MapComponent } from './components/content-contacts/map/map.component';
 //import { FeedbackComponent } from './components/content-contacts/feedback/feedback.component';
@@ -64,9 +64,9 @@ import { TestPage2Component } from './components/content-test/test-page-2/test-p
     AdditionalInfoComponent,
     NotFoundComponent,
     FooterContactsComponent,
-    ContentTestComponent,
-    TestPage1Component,
-    TestPage2Component,
+    // ContentTestComponent,
+    // TestPage1Component,
+    // TestPage2Component,
     //ContentContactsComponent,
     //MapComponent,
     //FeedbackComponent,
