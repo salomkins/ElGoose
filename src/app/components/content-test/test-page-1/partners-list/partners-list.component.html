@@ -1,15 +1,37 @@
 <div class="container">
-<h3>{{listName}}</h3>
 
-<div>
-  <label >Reģistrācijas numurs:</label>
-  <span>{{partner.countryCode}}{{partner.regNr}}</span>
+  <!-- <div>
+<h3>{{partner.name}}</h3>
+<label >Reģistrācijas numurs:</label>
+<span>{{partner.countryCode}}{{partner.regNr}}</span>
 </div>
 <div>
-  <label >Uzņēmums / Persona:</label>
-  <!-- <input type="text" class="form-control" id="name"
-       required
-       [(ngModel)]="partner.name" name="name"> -->
-</div>
+<label >Uzņēmums / Persona:</label>
+<input type="text" class="x" id="name"
+required
+[(ngModel)]="partner.name" name="name"/>
+</div> -->
+
+  <div class="row">
+    <div class="grid_3">
+      <h3>{{listName}}</h3>
+      <ul>
+        <li class="partners-item" *ngFor="let item of myPartners"
+        (click)="clickItem(item)">
+          <!-- <span>{{item.countryCode}} {{item.regNr}}</span> -->
+          <span>{{item.name}}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="grid_4">
+      <h3>Partnera apraksts</h3>
+      <div>Nosaukums: {{activeItem.name}}</div>
+      <div>Valsts kods: {{activeItem.countryCode}}</div>
+      <div>Reģ. numurs: {{activeItem.regNr}}</div>
+    </div>
+  </div>
+
+
 
 </div>

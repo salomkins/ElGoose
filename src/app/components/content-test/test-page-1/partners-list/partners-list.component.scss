@@ -4,3 +4,14 @@
 .container {
   padding-bottom: 50px;
 }
+
+.partners-item{
+  display: block;
+  padding: 5px;
+  margin: 0;
+  border-bottom: 1px solid #aaa;
+  &:hover{
+    background-color: #ddd;
+    cursor:pointer;
+  }
+}
