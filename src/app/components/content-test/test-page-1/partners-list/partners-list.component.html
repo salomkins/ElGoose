@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-  
+
     <div class="grid_3">
       <h3>{{listName}}</h3>
       <ul (mouseleave)="clearActiveItem()">
@@ -15,12 +15,7 @@
     </div>
 
     <div class="grid_4 box-content">
-      <h3>Apraksts</h3>
-      <ng-container *ngIf="!! activeItem">
-        <div>Nosaukums: {{activeItem.name}}</div>
-        <div>Valsts kods: {{activeItem.countryCode}}</div>
-        <div>Reģ. numurs: {{activeItem.regNr}}</div>
-      </ng-container>
+      <app-decription [descrItem] = "activeItem"></app-decription>
     </div>
 
     <div class="grid_4 box-content">
@@ -40,9 +35,6 @@
         </div>
       </ng-container>
     </div>
-
-
-
 
   </div>
 </div>

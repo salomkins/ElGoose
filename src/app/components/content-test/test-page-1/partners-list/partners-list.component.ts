@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export class partnersItem {
-  countryCode: string;
-  regNr: string;
-  name: string;
-}
+import { partnersItem } from '../data/partners-item';
 
 @Component({
   selector: 'app-partners-list',
