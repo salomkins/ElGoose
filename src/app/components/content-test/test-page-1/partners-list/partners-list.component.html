@@ -1,5 +1,5 @@
 <div class="container">
-
+  <div class="row">
   <!-- <div>
 <h3>{{partner.name}}</h3>
 <label >Reģistrācijas numurs:</label>
@@ -12,26 +12,38 @@ required
 [(ngModel)]="partner.name" name="name"/>
 </div> -->
 
-  <div class="row">
+
     <div class="grid_3">
       <h3>{{listName}}</h3>
-      <ul>
+      <ul (mouseleave)="clearActiveItem()">
         <li class="partners-item" *ngFor="let item of myPartners"
-        (click)="clickItem(item)">
-          <!-- <span>{{item.countryCode}} {{item.regNr}}</span> -->
+        (mouseenter)="readActiveItem(item)"
+        (click)="readEditItem(item)">
           <span>{{item.name}}</span>
         </li>
       </ul>
     </div>
 
-    <div class="grid_4">
+    <div class="grid_4 box-content">
       <h3>Partnera apraksts</h3>
+      <ng-container *ngIf="!! activeItem">
       <div>Nosaukums: {{activeItem.name}}</div>
       <div>Valsts kods: {{activeItem.countryCode}}</div>
       <div>Reģ. numurs: {{activeItem.regNr}}</div>
+      </ng-container>
     </div>
+
+    <div class="grid_4 box-content">
+      <h3>Labot sarakstu</h3>
+      <ng-container *ngIf="!! editItem">
+      <div>Nosaukums: {{editItem.name}}</div>
+      <div>Valsts kods: {{editItem.countryCode}}</div>
+      <div>Reģ. numurs: {{editItem.regNr}}</div>
+      </ng-container>
+    </div>
+
+
+
+
   </div>
-
-
-
 </div>
