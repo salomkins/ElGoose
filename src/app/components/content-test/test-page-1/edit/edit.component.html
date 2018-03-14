@@ -1,0 +1,15 @@
+<h3>{{caption}}</h3>
+<ng-container *ngIf="!! item">
+  <div>
+    <label>Nosaukums:</label>
+    <input type="text" id="name" required [(ngModel)]="item.name" name="name" />
+  </div>
+  <div>
+    <label>Valsts kods:</label>
+    <input type="text" id="countryCode" [(ngModel)]="item.countryCode" name="countryCode" />
+  </div>
+  <div>
+    <label>Reģ. numurs:</label>
+    <input type="text" id="regNr" [(ngModel)]="item.regNr" name="regNr" />
+  </div>
+</ng-container>

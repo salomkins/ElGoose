@@ -8,7 +8,6 @@ import { partnersItem } from '../data/partners-item';
 })
 
 export class PartnersListComponent implements OnInit {
-  listName = 'Partneru saraksts';
   myPartners = myPartnersList;
 
   activeItem: partnersItem;

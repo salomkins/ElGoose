@@ -1,6 +1,6 @@
-<h3>Apraksts</h3>
-<ng-container *ngIf="!! descrItem">
-  <div>Nosaukums: {{descrItem.name}}</div>
-  <div>Valsts kods: {{descrItem.countryCode}}</div>
-  <div>Reģ. numurs: {{descrItem.regNr}}</div>
+<h3>{{caption}}</h3>
+<ng-container *ngIf="!! item">
+  <div>Nosaukums: {{item.name}}</div>
+  <div>Valsts kods: {{item.countryCode}}</div>
+  <div>Reģ. numurs: {{item.regNr}}</div>
 </ng-container>

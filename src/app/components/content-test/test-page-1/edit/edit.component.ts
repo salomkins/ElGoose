@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { partnersItem } from '../data/partners-item';
 
 @Component({
-  selector: 'app-decription',
-  templateUrl: './decription.component.html',
-  styleUrls: ['./decription.component.scss']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.scss']
 })
-export class DecriptionComponent implements OnInit {
+export class EditComponent implements OnInit {
 
   private _caption: string = "";
   private _item: partnersItem;
@@ -15,7 +15,6 @@ export class DecriptionComponent implements OnInit {
 
   ngOnInit() {
   }
-
 
   @Input('caption')
   set caption(value: string) {

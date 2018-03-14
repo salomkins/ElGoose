@@ -6,6 +6,7 @@ import { TestPage1RoutingModule } from './test-page-1-routing.module';
 import { TestPage1Component } from './test-page-1.component';
 import { PartnersListComponent } from './partners-list/partners-list.component';
 import { DecriptionComponent } from './decription/decription.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { DecriptionComponent } from './decription/decription.component';
     TestPage1Component,
     PartnersListComponent,
     DecriptionComponent,
+    EditComponent,
   ]
 })
 export class TestPage1Module { }
