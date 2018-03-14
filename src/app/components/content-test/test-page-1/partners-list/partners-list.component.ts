@@ -26,8 +26,11 @@ export class PartnersListComponent implements OnInit {
 
   editItem: partnersItem;
   readEditItem(item: partnersItem) {
-    this.editItem = item;
+    if (this.editItem === item){
+    this.clearEditItem();}
+    else {this.editItem = item;}
   }
+
   clearEditItem() {
     this.editItem = null;
   }

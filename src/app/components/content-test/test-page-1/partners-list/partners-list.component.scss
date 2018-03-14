@@ -11,10 +11,15 @@
   margin: 0;
   border-bottom: 1px solid #aaa;
   &:hover{
-    background-color: #ddd;
     cursor:pointer;
   }
 }
 .box-content{
   min-height: 150px;
+}
+.edit {
+  background-color: #bada55;
+}
+.active {
+  background-color: #ddd;
 }

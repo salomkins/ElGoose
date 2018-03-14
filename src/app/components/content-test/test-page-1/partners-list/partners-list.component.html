@@ -1,44 +1,43 @@
 <div class="container">
   <div class="row">
-  <!-- <div>
-<h3>{{partner.name}}</h3>
-<label >Reģistrācijas numurs:</label>
-<span>{{partner.countryCode}}{{partner.regNr}}</span>
-</div>
-<div>
-<label >Uzņēmums / Persona:</label>
-<input type="text" class="x" id="name"
-required
-[(ngModel)]="partner.name" name="name"/>
-</div> -->
-
-
+  
     <div class="grid_3">
       <h3>{{listName}}</h3>
       <ul (mouseleave)="clearActiveItem()">
         <li class="partners-item" *ngFor="let item of myPartners"
         (mouseenter)="readActiveItem(item)"
-        (click)="readEditItem(item)">
+        (click)="readEditItem(item)"
+        [class.active] = "item === activeItem && item != editItem"
+        [class.edit] = "item === editItem">
           <span>{{item.name}}</span>
         </li>
       </ul>
     </div>
 
     <div class="grid_4 box-content">
-      <h3>Partnera apraksts</h3>
+      <h3>Apraksts</h3>
       <ng-container *ngIf="!! activeItem">
-      <div>Nosaukums: {{activeItem.name}}</div>
-      <div>Valsts kods: {{activeItem.countryCode}}</div>
-      <div>Reģ. numurs: {{activeItem.regNr}}</div>
+        <div>Nosaukums: {{activeItem.name}}</div>
+        <div>Valsts kods: {{activeItem.countryCode}}</div>
+        <div>Reģ. numurs: {{activeItem.regNr}}</div>
       </ng-container>
     </div>
 
     <div class="grid_4 box-content">
-      <h3>Labot sarakstu</h3>
+      <h3>Labot aprakstu</h3>
       <ng-container *ngIf="!! editItem">
-      <div>Nosaukums: {{editItem.name}}</div>
-      <div>Valsts kods: {{editItem.countryCode}}</div>
-      <div>Reģ. numurs: {{editItem.regNr}}</div>
+        <div>
+          <label>Nosaukums:</label>
+          <input type="text" id="name" required [(ngModel)]="editItem.name" name="name" />
+        </div>
+        <div>
+          <label>Valsts kods:</label>
+          <input type="text" id="countryCode" [(ngModel)]="editItem.countryCode" name="countryCode" />
+        </div>
+        <div>
+          <label>Reģ. numurs:</label>
+          <input type="text" id="regNr" [(ngModel)]="editItem.regNr" name="regNr" />
+        </div>
       </ng-container>
     </div>
 
