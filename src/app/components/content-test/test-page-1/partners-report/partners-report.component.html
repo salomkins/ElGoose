@@ -3,14 +3,14 @@
   <div class="row">
     <div class="grid_6">
       <h3>Sadarbības partneri</h3>
-      <!-- <ul (mouseleave)="clearActiveItem()"> -->
-      <ul>
-        <li *ngFor="let item of myPartners">
+      <div class="box-grid">
+        <ng-container *ngFor="let item of myPartners">
 
           <span>{{item.name}}</span>
+          <span>{{item.countryCode}} {{item.regNr}}</span>
 
-        </li>
-      </ul>
+        </ng-container>
+      </div>
     </div>
 
   </div>
