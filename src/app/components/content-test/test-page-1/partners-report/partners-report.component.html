@@ -1,0 +1,17 @@
+<div class="container">
+  <a routerLink=".." class="btn-my"><< Partneru saraksts</a>
+  <div class="row">
+    <div class="grid_6">
+      <h3>Sadarbības partneri</h3>
+      <!-- <ul (mouseleave)="clearActiveItem()"> -->
+      <ul>
+        <li *ngFor="let item of myPartners">
+
+          <span>{{item.name}}</span>
+
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

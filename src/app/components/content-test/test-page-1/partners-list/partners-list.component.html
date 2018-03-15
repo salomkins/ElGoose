@@ -1,9 +1,10 @@
 <div class="container">
+  <a routerLink="report" class="btn-my">Atskaite >></a>
   <div class="row">
-
     <div class="grid_3">
       <h3>Partneru saraksts</h3>
-      <ul (mouseleave)="clearActiveItem()">
+      <!-- <ul (mouseleave)="clearActiveItem()"> -->
+      <ul>
         <li class="partners-item" *ngFor="let item of myPartners"
         (mouseenter)="readActiveItem(item)"
         (click)="readEditItem(item)"

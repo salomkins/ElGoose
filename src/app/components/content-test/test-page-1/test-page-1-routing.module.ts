@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TestPage1Component } from './test-page-1.component';
+import { PartnersListComponent } from './partners-list/partners-list.component';
+import { PartnersReportComponent } from './partners-report/partners-report.component';
 
 const routes: Routes = [
-  { path: '', component: TestPage1Component }
+  { path: 'partners', component: PartnersListComponent },
+  { path: '', redirectTo: 'partners' },
+  { path: 'partners/report', component: PartnersReportComponent },
   ];
 
 @NgModule({
