@@ -12,4 +12,5 @@
     <label>Reģ. numurs:</label>
     <input type="text" id="regNr" [(ngModel)]="item.regNr" name="regNr" />
   </div>
+  <button class="btn-my" *ngIf="! item.id" >Pievienot</button>
 </ng-container>

@@ -11,6 +11,12 @@ import { PartnersService } from '../data/partners.service';
 
 export class PartnersListComponent implements OnInit {
   myPartners: partnersItem[];
+  newItem: partnersItem = {
+    id: null,
+    countryCode: '',
+    regNr: '',
+    name: ''
+  };
 
   getPartners(){
     this.myPartners = this._PartnersService.getPartners();
@@ -25,6 +31,7 @@ export class PartnersListComponent implements OnInit {
   }
 
   editItem: partnersItem;
+
   readEditItem(item: partnersItem) {
     if (this.editItem === item){
     this.clearEditItem();}
@@ -32,12 +39,19 @@ export class PartnersListComponent implements OnInit {
   }
 
   clearEditItem() {
-    this.editItem = null;
+    this.newItem = {
+      id: null,
+      countryCode: '',
+      regNr: '',
+      name: ''
+    };
+    this.editItem = this.newItem;
   }
 
   constructor(private _PartnersService: PartnersService) { }
 
   ngOnInit() {
     this.getPartners();
+    this.editItem = this.newItem
   }
 }
