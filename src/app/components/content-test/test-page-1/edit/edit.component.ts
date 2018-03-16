@@ -11,6 +11,10 @@ export class EditComponent implements OnInit {
   private _caption: string = "";
   private _item: partnersItem;
 
+  deleteItem() {
+    alert("dzest");
+  }
+
   constructor() { }
 
   ngOnInit() {

@@ -1,10 +1,10 @@
-:host{
+:host {
   display: block;
   background-color: #eef;
 }
-
 //
 .btn-my {
+  $bc: #62bfe6;
   display: inline-block;
   padding: 10px 20px;
   font-size: 14px;
@@ -14,19 +14,34 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #fff;
-  background: #62bfe6;
-  margin: 20px;
-  margin-left: 0;
+  background: $bc;
+  margin: 20px 20px 20px 0;
+  border-radius: 3px;
+
+  &:hover {
+    background: darken($bc, 5%);
+  }
+
+  &:active {
+    background: darken($bc, 10%);
+  }
   @media (max-width: 767px) {
     display: block;
     width: 80%;
     margin: 0 auto 10px;
   }
-}
-.btn-my:hover {
-  background: #4ab5e2;
-}
 
-.btn-my:active {
-  background: #22a1d7;
+  &-red {
+    @extend .btn-my;
+    $bc: #f00;
+    background: $bc;
+
+    &:hover {
+      background: darken($bc, 5%);
+    }
+
+    &:active {
+      background: darken($bc, 10%);
+    }
+  }
 }
