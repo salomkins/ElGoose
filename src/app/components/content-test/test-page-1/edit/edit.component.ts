@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { partnersItem } from '../data/partners-item';
 
 @Component({
@@ -12,7 +12,7 @@ export class EditComponent implements OnInit {
   private _item: partnersItem;
 
   deleteItem() {
-    alert("dzest");
+    this.onDeleteItem.emit(true);
   }
 
   constructor() { }
@@ -36,4 +36,5 @@ export class EditComponent implements OnInit {
     return this._item;
   }
 
+  @Output() onDeleteItem = new EventEmitter<boolean>();
 }

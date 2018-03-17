@@ -20,7 +20,7 @@
     </div>
 
     <div class="grid_4 box-content">
-      <app-edit caption ="Labot sarakstu" [item] = "editItem"></app-edit>
+      <app-edit caption ="Labot sarakstu" [item] = "editItem" (onDeleteItem) = "deleteItem($event)"></app-edit>
     </div>
 
   </div>

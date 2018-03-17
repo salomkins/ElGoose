@@ -11,12 +11,7 @@ import { PartnersService } from '../data/partners.service';
 
 export class PartnersListComponent implements OnInit {
   myPartners: partnersItem[];
-  newItem: partnersItem = {
-    id: null,
-    countryCode: '',
-    regNr: '',
-    name: ''
-  };
+  newItem: partnersItem;
 
   getPartners(){
     this.myPartners = this._PartnersService.getPartners();
@@ -26,25 +21,32 @@ export class PartnersListComponent implements OnInit {
   readActiveItem(item: partnersItem) {
     this.activeItem = item;
   }
+
   clearActiveItem() {
     this.activeItem = null;
   }
 
   editItem: partnersItem;
-
   readEditItem(item: partnersItem) {
     if (this.editItem === item){
-    this.clearEditItem();}
+    this.newItem=this.clearItem();
+    this.editItem = this.newItem;}
     else {this.editItem = item;}
   }
 
-  clearEditItem() {
-    this.newItem = {
+  clearItem(): partnersItem {
+      return {
       id: null,
       countryCode: '',
       regNr: '',
       name: ''
     };
+  }
+
+  deleteItem(e) {
+    if (this.myPartners.indexOf(this.editItem) > -1){
+       this.myPartners.splice(this.myPartners.indexOf(this.editItem), 1);}
+    this.newItem=this.clearItem();
     this.editItem = this.newItem;
   }
 
@@ -52,6 +54,7 @@ export class PartnersListComponent implements OnInit {
 
   ngOnInit() {
     this.getPartners();
-    this.editItem = this.newItem
+    this.newItem=this.clearItem();
+    this.editItem = this.newItem;
   }
 }
