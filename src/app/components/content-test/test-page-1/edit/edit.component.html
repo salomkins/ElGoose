@@ -1,17 +1,21 @@
 <h3>{{caption}}</h3>
 <ng-container *ngIf="!! item">
-  <div>
+  <div class="box-grid">
     <label>Nosaukums:</label>
     <input type="text" id="name" required [(ngModel)]="item.name" name="name" />
   </div>
-  <div>
+  <div class="box-grid">
     <label>Valsts kods:</label>
     <input type="text" id="countryCode" [(ngModel)]="item.countryCode" name="countryCode" />
   </div>
-  <div>
+  <div class="box-grid">
     <label>Reģ. numurs:</label>
     <input type="text" id="regNr" [(ngModel)]="item.regNr" name="regNr" />
   </div>
-  <button class="btn-my" *ngIf="! item.id" >Pievienot</button>
-  <button class="btn-my-red" *ngIf="!! item.id" (click)="deleteItem()">Dzēst</button>
+  <button class="btn-my" *ngIf="! item.id" (click)="addItem()">Pievienot</button>
+  <ng-container *ngIf="!! item.id">
+    <button class="btn-my-red" (click)="deleteItem()">Dzēst</button>
+    <button class="btn-my" (click)="okItem()">Apstiprināt</button>
+    <button class="btn-my" (click)="cancel()">Beigt labot</button>
+  </ng-container>
 </ng-container>

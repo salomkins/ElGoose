@@ -2,6 +2,12 @@
   display: block;
   background-color: #eef;
 }
+  .box-grid{
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 100px minmax(100px, 1fr);
+    margin-top: 20px;
+  }
 //
 .btn-my {
   $bc: #62bfe6;

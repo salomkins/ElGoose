@@ -11,8 +11,29 @@ export class EditComponent implements OnInit {
   private _caption: string = "";
   private _item: partnersItem;
 
+  clone(obj) {
+      if (null == obj || "object" != typeof obj) return obj;
+      var copy = obj.constructor();
+      for (var attr in obj) {
+          if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+      }
+      return copy;
+  }
+
+  cancel() {
+    this.onCancel.emit(true);
+  }
+
   deleteItem() {
     this.onDeleteItem.emit(true);
+  }
+
+  okItem() {
+    this.onOkItem.emit(this._item);
+  }
+
+  addItem() {
+    this.onAddItem.emit(this._item);
   }
 
   constructor() { }
@@ -30,11 +51,15 @@ export class EditComponent implements OnInit {
 
   @Input('item')
   set item(value: partnersItem) {
-    this._item = value;
+    this._item = this.clone(value);
   }
   get item(): partnersItem {
     return this._item;
   }
 
+  @Output() onAddItem = new EventEmitter<partnersItem>();
+  @Output() onCancel = new EventEmitter<boolean>();
   @Output() onDeleteItem = new EventEmitter<boolean>();
+  @Output() onOkItem = new EventEmitter<partnersItem>();
+
 }

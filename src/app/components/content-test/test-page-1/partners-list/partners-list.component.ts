@@ -11,9 +11,9 @@ import { PartnersService } from '../data/partners.service';
 
 export class PartnersListComponent implements OnInit {
   myPartners: partnersItem[];
-  newItem: partnersItem;
+  //newItem: partnersItem;
 
-  getPartners(){
+  getPartners() {
     this.myPartners = this._PartnersService.getPartners();
   }
 
@@ -28,14 +28,14 @@ export class PartnersListComponent implements OnInit {
 
   editItem: partnersItem;
   readEditItem(item: partnersItem) {
-    if (this.editItem === item){
-    this.newItem=this.clearItem();
-    this.editItem = this.newItem;}
-    else {this.editItem = item;}
+    if (this.editItem === item) {
+      this.editItem = this.clearItem();
+    }
+    else { this.editItem = item; }
   }
 
   clearItem(): partnersItem {
-      return {
+    return {
       id: null,
       countryCode: '',
       regNr: '',
@@ -43,18 +43,45 @@ export class PartnersListComponent implements OnInit {
     };
   }
 
+  addItem(e) {
+    var newItem: partnersItem = {
+      id: 777,
+      name: e.name,
+      countryCode: e.countryCode,
+      regNr: e.regNr
+    };
+    var i = this.myPartners.indexOf(this.activeItem);
+    if (i > -1) {
+      this.myPartners.splice(i, 0, newItem);
+    }
+    else {
+      this.myPartners.push(newItem);
+    }
+  }
+
+  cancel(e) {
+    this.readEditItem(this.editItem);
+  }
+
   deleteItem(e) {
-    if (this.myPartners.indexOf(this.editItem) > -1){
-       this.myPartners.splice(this.myPartners.indexOf(this.editItem), 1);}
-    this.newItem=this.clearItem();
-    this.editItem = this.newItem;
+    var i = this.myPartners.indexOf(this.editItem);
+    if (i > -1) {
+      this.myPartners.splice(i, 1);
+    }
+    this.editItem = this.clearItem();;
+  }
+
+  okItem(e) {
+    this.editItem.name = e.name;
+    this.editItem.countryCode = e.countryCode;
+    this.editItem.regNr = e.regNr;
   }
 
   constructor(private _PartnersService: PartnersService) { }
 
   ngOnInit() {
     this.getPartners();
-    this.newItem=this.clearItem();
-    this.editItem = this.newItem;
+    this.editItem = this.clearItem();
+    this.activeItem = null;
   }
 }
