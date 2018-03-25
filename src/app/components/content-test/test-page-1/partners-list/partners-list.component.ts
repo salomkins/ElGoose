@@ -6,24 +6,14 @@ import { PartnersService } from '../data/partners.service';
   selector: 'app-partners-list',
   templateUrl: './partners-list.component.html',
   styleUrls: ['./partners-list.component.scss'],
-  providers: [PartnersService]
 })
 
 export class PartnersListComponent implements OnInit {
   myPartners: partnersItem[];
-  //newItem: partnersItem;
-
-  getPartners() {
-    this.myPartners = this._PartnersService.getPartners();
-  }
 
   activeItem: partnersItem;
   readActiveItem(item: partnersItem) {
     this.activeItem = item;
-  }
-
-  clearActiveItem() {
-    this.activeItem = null;
   }
 
   editItem: partnersItem;
@@ -44,13 +34,13 @@ export class PartnersListComponent implements OnInit {
   }
 
   addItem(e) {
-    var newItem: partnersItem = {
+    let newItem: partnersItem = {
       id: 777,
       name: e.name,
       countryCode: e.countryCode,
       regNr: e.regNr
     };
-    var i = this.myPartners.indexOf(this.activeItem);
+    let i = this.myPartners.indexOf(this.activeItem);
     if (i > -1) {
       this.myPartners.splice(i, 0, newItem);
     }
@@ -64,23 +54,18 @@ export class PartnersListComponent implements OnInit {
   }
 
   deleteItem(e) {
-    var i = this.myPartners.indexOf(this.editItem);
-    if (i > -1) {
-      this.myPartners.splice(i, 1);
-    }
-    this.editItem = this.clearItem();;
+    this._PartnersService.deletePartner(this.editItem);
+    this.editItem = this.clearItem();
   }
 
   okItem(e) {
-    this.editItem.name = e.name;
-    this.editItem.countryCode = e.countryCode;
-    this.editItem.regNr = e.regNr;
+    this._PartnersService.editPartner(this.editItem, e);
   }
 
   constructor(private _PartnersService: PartnersService) { }
 
   ngOnInit() {
-    this.getPartners();
+    this.myPartners = this._PartnersService.getPartners();
     this.editItem = this.clearItem();
     this.activeItem = null;
   }
