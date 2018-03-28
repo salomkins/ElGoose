@@ -10,6 +10,7 @@ import { PartnersService } from '../data/partners.service';
 
 export class PartnersListComponent implements OnInit {
   myPartners: partnersItem[];
+  err: number = 0;
 
   activeItem: partnersItem;
   readActiveItem(item: partnersItem) {
@@ -18,6 +19,7 @@ export class PartnersListComponent implements OnInit {
 
   editItem: partnersItem;
   readEditItem(item: partnersItem) {
+    this.err = 0;
     if (this.editItem === item) {
       this.editItem = this.clearItem();
     }
@@ -34,19 +36,7 @@ export class PartnersListComponent implements OnInit {
   }
 
   addItem(e) {
-    let newItem: partnersItem = {
-      id: 777,
-      name: e.name,
-      countryCode: e.countryCode,
-      regNr: e.regNr
-    };
-    let i = this.myPartners.indexOf(this.activeItem);
-    if (i > -1) {
-      this.myPartners.splice(i, 0, newItem);
-    }
-    else {
-      this.myPartners.push(newItem);
-    }
+    this.err = this._PartnersService.addPartner(e, this.activeItem);
   }
 
   cancel(e) {
@@ -59,7 +49,7 @@ export class PartnersListComponent implements OnInit {
   }
 
   okItem(e) {
-    this._PartnersService.editPartner(this.editItem, e);
+    this.err = this._PartnersService.editPartner(this.editItem, e);
   }
 
   constructor(private _PartnersService: PartnersService) { }

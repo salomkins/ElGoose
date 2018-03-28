@@ -4,28 +4,30 @@
     <div class="grid_3">
       <h3>Partneru saraksts</h3>
       <!-- <ul (mouseleave)="clearActiveItem()"> -->
-      <ul>
-        <li class="partners-item" *ngFor="let item of myPartners"
-        (mouseenter)="readActiveItem(item)"
-        (click)="readEditItem(item)"
-        [class.active] = "item === activeItem && item != editItem"
-        [class.edit] = "item === editItem">
-          <span>{{item.name}}</span>
-        </li>
-      </ul>
+      <div class="box-list">
+
+        <ul>
+          <li class="partners-item" *ngFor="let item of myPartners"
+          (mouseenter)="readActiveItem(item)"
+          (click)="readEditItem(item)"
+          [class.active]="item === activeItem && item != editItem"
+          [class.edit]="item === editItem">
+            <span>{{item.name}}</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="grid_4 box-content">
-      <app-decription caption ="Apraksts" [item] = "activeItem"></app-decription>
+      <app-decription caption="Apraksts" [item]="activeItem"></app-decription>
     </div>
 
     <div class="grid_4 box-content">
-      <app-edit caption ="Labot sarakstu" [item] = "editItem"
-      (onAddItem) = "addItem($event)"
-      (onDeleteItem) = "deleteItem($event)"
-      (onOkItem) = "okItem($event)"
-      (onCancel) = "cancel($event)"
-       ></app-edit>
+      <app-edit caption="Labot sarakstu" [item]="editItem" [err]="err"
+      (onAddItem)="addItem($event)"
+      (onDeleteItem)="deleteItem($event)"
+      (onOkItem)="okItem($event)"
+      (onCancel)="cancel($event)"></app-edit>
     </div>
 
   </div>

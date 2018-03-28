@@ -8,6 +8,8 @@ import { partnersItem } from '../data/partners-item';
 })
 export class EditComponent implements OnInit {
 
+  private _err: number = 0;
+  private chk: boolean = true;
   private _caption: string = "";
   private _item: partnersItem;
 
@@ -33,12 +35,32 @@ export class EditComponent implements OnInit {
   }
 
   addItem() {
-    this.onAddItem.emit(this._item);
+    let value = {
+      item: this._item,
+      add: this.chk
+    }
+    this.onAddItem.emit(value);
   }
 
+changeRBtn(e) {
+  let target = e.target;
+  if (target.checked && target.value === 'bottom'){
+    this.chk = true;
+  } else {
+    this.chk = false;
+  };
+}
   constructor() { }
 
   ngOnInit() {
+  }
+
+  @Input('err')
+  set err(value: number) {
+    this._err = value;
+  }
+  get err(): number {
+    return this._err;
   }
 
   @Input('caption')
@@ -57,7 +79,7 @@ export class EditComponent implements OnInit {
     return this._item;
   }
 
-  @Output() onAddItem = new EventEmitter<partnersItem>();
+  @Output() onAddItem = new EventEmitter<{item: partnersItem; add: boolean}>();
   @Output() onCancel = new EventEmitter<boolean>();
   @Output() onDeleteItem = new EventEmitter<boolean>();
   @Output() onOkItem = new EventEmitter<partnersItem>();

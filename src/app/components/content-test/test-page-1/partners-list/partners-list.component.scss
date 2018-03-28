@@ -6,6 +6,12 @@
   padding: 20px 0 50px;
 }
 
+.box-list {
+  height: 250px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
 .partners-item{
   display: block;
   line-height: 20px;

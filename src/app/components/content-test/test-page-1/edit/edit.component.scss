@@ -2,13 +2,36 @@
   display: block;
   background-color: #eef;
 }
-  .box-grid{
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: 100px minmax(100px, 1fr);
-    margin-top: 20px;
+
+.box-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 100px minmax(100px, 1fr);
+  margin-top: 20px;
+}
+
+::placeholder {
+  color: #f00;
+  opacity: 0.5;
+}
+
+.err {
+  &::placeholder {
+    opacity: 1;
+    transition: opacity 0.3s linear;
   }
+}
+
+.box-radio {
+  display: inline-block;
+  margin-top: 25px;
+
+  input[type="radio"] {
+    margin-left: 20px;
+  }
+}
 //
+
 .btn-my {
   $bc: #62bfe6;
   display: inline-block;
@@ -34,7 +57,7 @@
   @media (max-width: 767px) {
     display: block;
     width: 80%;
-    margin: 0 auto 10px;
+    margin: 20px auto 0;
   }
 
   &-red {
