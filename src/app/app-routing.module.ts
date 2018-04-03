@@ -17,8 +17,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 // import { TestPage2Component } from './components/content-test/test-page-2/test-page-2.component';
 
 const routes: Routes = [
-  { path: '', component: ContentComponent },
-  { path: 'home', redirectTo: '' },
+  { path: 'home', component: ContentComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'about', component: ContentAboutComponent },
   { path: 'services', component: ContentServicesComponent },
   { path: 'faqs', component: ContentFaqsComponent },

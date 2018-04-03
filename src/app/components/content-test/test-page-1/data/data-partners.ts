@@ -22,17 +22,23 @@ export var myPartnersList: partnersItem[] = [
   {
     id: 4,
     countryCode: 'LV',
+    regNr: '40222222222',
+    name: 'AAbb SIA'
+  },
+  {
+    id: 5,
+    countryCode: 'LV',
     regNr: '40333333333',
     name: 'CCC SIA'
   },
   {
-    id: 5,
+    id: 6,
     countryCode: 'RU',
     regNr: '40444444444',
     name: 'DDD SIA'
   },
   {
-    id: 6,
+    id: 7,
     countryCode: 'EE',
     regNr: '40999999999',
     name: 'LAST SIA'

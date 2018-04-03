@@ -2,11 +2,14 @@
   <div class="container">
     <nav class="nav">
       <ul data-type="navbar" class="sf-menu">
-        <!-- <li class="active"><a href="./">Home</a> -->
-        <li class="active"><a routerLink="/home">Home</a>
+
+        <li *ngFor="let item of navItems"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+          <a routerLink="{{item.link}}">{{item.name}}</a>
         </li>
+
         <!-- <li><a href="index-1.html">About</a> -->
-        <li><a routerLink="/about">About</a>
+        <!-- <li><a routerLink="/about">About</a>
           <ul>
             <li><a href="#">Lorem ipsum dolor</a></li>
             <li><a href="#">Conse ctetur adipisicing</a></li>
@@ -28,7 +31,7 @@
         <li><a routerLink="/contacts">Contacts</a>
         </li>
         <li><a routerLink="/test">Test page</a>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </div>

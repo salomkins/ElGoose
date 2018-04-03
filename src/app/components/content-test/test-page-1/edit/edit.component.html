@@ -1,6 +1,7 @@
 <h3>{{caption}}</h3>
 <ng-container *ngIf="!! item">
-  <div class="box-grid">
+
+  <form class="box-grid">
     <label>Nosaukums:</label>
     <input type="text" id="name" [(ngModel)]="item.name" name="name"
     [class.err]="err === 11" placeholder="Obligāti norādiet vērtību..."/>
@@ -10,7 +11,7 @@
 
     <label>Reģ. numurs:</label>
     <input type="text" id="regNr" [(ngModel)]="item.regNr" name="regNr" />
-  </div>
+  </form>
   <ng-container *ngIf="! item.id">
     <button class="btn-my" (click)="addItem()">Pievienot</button>
     <div class="box-radio">
