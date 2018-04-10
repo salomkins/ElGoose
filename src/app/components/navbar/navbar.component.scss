@@ -6,21 +6,25 @@
 }
 
 .stuck_container {
+  position: relative;
   margin-top: 22px;
   background: #434547;
 }
 
-.isStuck {
-  margin-top: 0;
+.is_stuck {
   z-index: 9999;
   border-bottom: 1px solid #888;
+  position: fixed;
+  top: -22px;
+  left: 0;
+  right: 0;
 }
 
-@media only screen and (max-width: 979px) {
-  .isStuck {
-    display: none !important;
-  }
-}
+// @media only screen and (max-width: 979px) {
+//   .isStuck {
+//     display: none !important;
+//   }
+// }
 
 .sf-menu {
   display: inline-block;
