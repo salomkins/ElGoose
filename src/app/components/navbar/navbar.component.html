@@ -2,37 +2,17 @@
   <div class="container">
     <nav class="nav">
       <ul data-type="navbar" class="sf-menu">
-
         <li *ngFor="let item of navItems"
-        routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}"
+        (mouseenter)="subMenuOn(true, item)"
+        (mouseleave)="subMenuOn(false, item)">
           <a routerLink="{{item.link}}">{{item.name}}</a>
-        </li>
-<!-- <li><a (click)="kuku()">XXX</a></li> -->
-
-        <!-- <li><a href="index-1.html">About</a> -->
-        <!-- <li><a routerLink="/about">About</a>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Conse ctetur adipisicing</a></li>
-            <li><a href="#">Elit sed do eiusmod
-              <ul>
-                <li><a href="#">Lorem ipsum</a></li>
-                <li><a href="#">Conse adipisicing</a></li>
-                <li><a href="#">Sit amet dolore</a></li>
-              </ul></a></li>
-            <li><a href="#">Incididunt ut labore</a></li>
-            <li><a href="#">Et dolore magna</a></li>
-            <li><a href="#">Ut enim ad minim</a></li>
+          <ul *ngIf="item.subMenu" [class.display_sub]="item.subMenuActive">
+            <li *ngFor="let itemSubMenu of item.subMenu">
+              <a routerLink="{{itemSubMenu.link}}">{{itemSubMenu.name}}</a>
+            </li>
           </ul>
         </li>
-        <li><a routerLink="/services">Services</a>
-        </li>
-        <li><a routerLink="/faqs">FAQS</a>
-        </li>
-        <li><a routerLink="/contacts">Contacts</a>
-        </li>
-        <li><a routerLink="/test">Test page</a>
-        </li> -->
       </ul>
     </nav>
   </div>

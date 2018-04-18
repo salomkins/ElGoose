@@ -9,6 +9,9 @@
   position: relative;
   margin-top: 22px;
   background: #434547;
+  .display_sub {
+    display: block;
+  }
 }
 
 .is_stuck {
@@ -19,6 +22,7 @@
   left: 0;
   right: 0;
 }
+
 
 // @media only screen and (max-width: 979px) {
 //   .isStuck {

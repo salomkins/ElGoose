@@ -7,14 +7,23 @@ import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  navItems: { name: string, link: string }[];
+  navItems: {
+    name: string,
+    link: string,
+    subMenu?: {
+      name: string,
+      link: string,
+    }[],
+    subMenuActive?: boolean,
+   }[];
   isStuck: boolean = false;
 
   constructor(public el: ElementRef) { }
 
-  kuku() {
-    alert(this.el.nativeElement.offsetTop);
-  }
+
+subMenuOn(OnOff:boolean, item){
+  if(item.subMenu) item.subMenuActive = OnOff;
+}
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
@@ -27,8 +36,20 @@ export class NavbarComponent implements OnInit {
     this.navItems =
       [
         { name: "Home", link: "/home" },
-        { name: "About", link: "/about" },
-        { name: "Services", link: "/services" },
+        { name: "About", link: "/about",
+          subMenu: [
+            { name: "Quick facts", link: "/about" },
+            { name: "Who we are", link: "/about" },
+            { name: "Our awards", link: "/about" },
+          ]
+        },
+        { name: "Services", link: "/services",
+          subMenu: [
+            { name: "The best business services", link: "/services" },
+            { name: "How we can help?", link: "/services" },
+            { name: "Price list", link: "/services" },
+          ]
+        },
         { name: "FAQS", link: "/faqs" },
         { name: "Contacts", link: "/contacts" },
         { name: "Test", link: "/test" },
