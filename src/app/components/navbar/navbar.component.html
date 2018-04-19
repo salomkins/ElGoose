@@ -1,14 +1,16 @@
 <div class="stuck_container" [class.is_stuck]="isStuck">
   <div class="container">
     <nav class="nav">
-      <ul data-type="navbar" class="sf-menu">
-        <li *ngFor="let item of navItems"
-        routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}"
+      <ul class="sf-menu">
+        <li *ngFor="let item of navItems"  [class.sfHover]="item.subMenuActive"
+        routerLinkActive="sfHover" [routerLinkActiveOptions]="{exact: false}"
         (mouseenter)="subMenuOn(true, item)"
-        (mouseleave)="subMenuOn(false, item)">
+        (mouseleave)="subMenuOn(false, item)"
+        (click)="activeItem=item">
           <a routerLink="{{item.link}}">{{item.name}}</a>
           <ul *ngIf="item.subMenu" [class.display_sub]="item.subMenuActive">
-            <li *ngFor="let itemSubMenu of item.subMenu">
+            <li *ngFor="let itemSubMenu of item.subMenu"
+            (click)="activeItem=item">
               <a routerLink="{{itemSubMenu.link}}">{{itemSubMenu.name}}</a>
             </li>
           </ul>
@@ -16,4 +18,25 @@
       </ul>
     </nav>
   </div>
+</div>
+<!--  sm menu-->
+<div class="sm_nav_left" [class.sm_nav_left_on]="navBar !== 'fa-bars'">
+<div class="sm_menu">
+  <ul>
+    <li *ngFor="let item of navItems"
+    (click)="activeItem=item">
+      <a routerLink="{{item.link}}">{{item.name}}</a>
+      <!-- <ul *ngIf="item.subMenu" [class.display_sub]="item.subMenuActive">
+        <li *ngFor="let itemSubMenu of item.subMenu">
+          <a routerLink="{{itemSubMenu.link}}">{{itemSubMenu.name}}</a>
+        </li>
+      </ul> -->
+    </li>
+  </ul>
+</div>
+</div>
+
+<div class="sm_nav_top">
+  <span class="nav-btn {{navBar}}" (click)="navBarClick()"></span>
+  <span>{{activeItem.name}}</span>
 </div>
