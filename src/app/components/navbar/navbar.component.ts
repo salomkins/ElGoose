@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import {Component, OnInit, HostListener, ElementRef, OnDestroy} from '@angular/core';
 
 export class navItem {
   name: string;
@@ -7,7 +7,7 @@ export class navItem {
     name: string;
     link: string;
   }[];
-  subMenuActive?: boolean
+  subMenuActive?: boolean;
 }
 
 @Component({
@@ -16,7 +16,7 @@ export class navItem {
   styleUrls: ['./navbar.component.scss']
 })
 
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
 
   navItems: navItem[];
   hoverItem: navItem;
@@ -25,7 +25,11 @@ export class NavbarComponent implements OnInit {
   navBar: string;
   subMenuBar: string;
 
-  constructor(public el: ElementRef) { }
+  navbarTimer: any = null;
+
+  constructor(public el: ElementRef) {
+    this.checkScroll = this.checkScroll.bind(this);
+  }
 
 
 
@@ -42,7 +46,7 @@ export class NavbarComponent implements OnInit {
   }
 
 
-  @HostListener('window:scroll', ['$event'])
+  // @HostListener('window:scroll', ['$event'])
   checkScroll() {
     const componentPosition = this.el.nativeElement.offsetTop;
     const scrollPosition = window.pageYOffset;
@@ -76,5 +80,11 @@ export class NavbarComponent implements OnInit {
     this.activeItem = this.navItems[0];
     this.navBar = 'fa-bars';
     this.subMenuBar = 'fa-angle-down';
+
+    this.navbarTimer = setInterval(this.checkScroll, 16);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.navbarTimer);
   }
 }
