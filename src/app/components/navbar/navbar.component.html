@@ -2,16 +2,13 @@
   <div class="container">
     <nav class="nav">
       <ul class="sf-menu">
-        <li *ngFor="let item of navItems"  [class.sfHover]="item.subMenuActive"
-        routerLinkActive="sfHover" [routerLinkActiveOptions]="{exact: false}"
-        (mouseenter)="subMenuOn(true, item)"
-        (mouseleave)="subMenuOn(false, item)"
-        (click)="activeItem=item">
-          <a routerLink="{{item.link}}">{{item.name}}</a>
-          <ul *ngIf="item.subMenu" [class.display_sub]="item.subMenuActive">
-            <li *ngFor="let itemSubMenu of item.subMenu"
-            (click)="activeItem=item">
-              <a routerLink="{{itemSubMenu.link}}">{{itemSubMenu.name}}</a>
+        <li *ngFor="let item of navItems" [class.sf-hover]="item===hoverItem"
+        routerLinkActive="sf-active" [routerLinkActiveOptions]="{exact: false}"
+        (mouseenter)="hoverItem = item" (mouseleave)="hoverItem = null">
+          <a routerLink="{{item.link}}" (click)="activeItem=item">{{item.name}}</a>
+          <ul *ngIf="item.subMenu" [class.display_sub]="item===hoverItem">
+            <li *ngFor="let itemSubMenu of item.subMenu">
+              <a routerLink="{{itemSubMenu.link}}" (click)="activeItem=item">{{itemSubMenu.name}}</a>
             </li>
           </ul>
         </li>
@@ -19,24 +16,29 @@
     </nav>
   </div>
 </div>
+
+
 <!--  sm menu-->
 <div class="sm_nav_left" [class.sm_nav_left_on]="navBar !== 'fa-bars'">
-<div class="sm_menu">
-  <ul>
-    <li *ngFor="let item of navItems"
-    (click)="activeItem=item">
-      <a routerLink="{{item.link}}">{{item.name}}</a>
-      <!-- <ul *ngIf="item.subMenu" [class.display_sub]="item.subMenuActive">
-        <li *ngFor="let itemSubMenu of item.subMenu">
-          <a routerLink="{{itemSubMenu.link}}">{{itemSubMenu.name}}</a>
-        </li>
-      </ul> -->
-    </li>
-  </ul>
+  <div class="sm_menu">
+    <ul>
+      <li *ngFor="let item of navItems">
+        <span *ngIf="item.subMenu" class="sm_sub_btn {{subMenuBar}}"
+        [class.sm_sub_btn_click]="item.subMenuActive"
+        (click)="sm_subMenuClick(item)"></span>
+        <a routerLink="{{item.link}}" (click)="activeItem=item">{{item.name}}</a>
+        <ul *ngIf="item.subMenu" class="sm_submenu" [class.display_sub]="item.subMenuActive">
+          <li *ngFor="let itemSubMenu of item.subMenu">
+            <a routerLink="{{itemSubMenu.link}}"
+            (click)="activeItem=item">{{itemSubMenu.name}}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>
-</div>
-
 <div class="sm_nav_top">
-  <span class="nav-btn {{navBar}}" (click)="navBarClick()"></span>
-  <span>{{activeItem.name}}</span>
+  <span class="nav-btn {{navBar}}" [class.nav-btn_click]="navBar !== 'fa-bars'"
+  (click)="navBarClick()"></span>
+  <span class="nav-link">{{activeItem.name}}</span>
 </div>

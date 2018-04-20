@@ -19,24 +19,28 @@ export class navItem {
 export class NavbarComponent implements OnInit {
 
   navItems: navItem[];
+  hoverItem: navItem;
   activeItem: navItem;
   isStuck: boolean = false;
   navBar: string;
+  subMenuBar: string;
 
   constructor(public el: ElementRef) { }
 
 
-  subMenuOn(OnOff: boolean, item: navItem) {
-    if (item.subMenu) item.subMenuActive = OnOff;
+
+  sm_subMenuClick(item: navItem) {
+    if (item.subMenu) item.subMenuActive = !item.subMenuActive;
   }
 
-navBarClick() {
-  if (this.navBar === 'fa-bars'){
-    this.navBar = 'fa-arrow-left';
-  }else{
-    this.navBar = 'fa-bars';
+  navBarClick() {
+    if (this.navBar === 'fa-bars') {
+      this.navBar = 'fa-arrow-down';
+    } else {
+      this.navBar = 'fa-bars';
+    }
   }
-}
+
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
@@ -71,5 +75,6 @@ navBarClick() {
       ];
     this.activeItem = this.navItems[0];
     this.navBar = 'fa-bars';
+    this.subMenuBar = 'fa-angle-down';
   }
 }

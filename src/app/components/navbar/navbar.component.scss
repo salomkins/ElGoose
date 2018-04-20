@@ -4,6 +4,10 @@
   font: 400 14px/28px "Roboto", sans-serif;
   -webkit-text-size-adjust: none;
 }
+
+* {
+  box-sizing: border-box;
+}
 //sm_menu START
 
 .sm_nav_left {
@@ -17,7 +21,7 @@
   color: #56585a;
   z-index: 9000;
   box-shadow: 5px 0 5px 0 rgba(0,0,0,.1);
-  transition: left 0.5s;
+  transition: left 0.3s;
   @media (max-width: 767px) {
     display: block;
   }
@@ -34,16 +38,61 @@
 
   li {
     display: block;
+    position: relative;
     width: 100%;
+  }
 
-    a {
-      display: block;
-      padding: 10px 25px;
+  .sm_sub_btn {
+    display: block;
+    position: absolute;
+    left: 190px;
+    top: 9px;
+    height: 30px;
+    width: 30px;
+    background-color: rgba(100, 100, 100, .2);
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 1px;
+    transition: transform 0.3s;
 
-      &:hover {
-        color: #fff;
-        background: #5ab7de;
-      }
+    &_click {
+      transform: rotate(180deg);
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      background: #fff;
+    }
+
+    &:hover ~ a {
+      color: #fff;
+      background: #5ab7de;
+    }
+  }
+
+  .sm_submenu {
+    display: none;
+    padding-left: 10px;
+  }
+
+  .display_sub {
+    display: block;
+  }
+
+  a {
+    display: block;
+    padding: 10px 70px 10px 20px;
+
+    &:hover {
+      color: #fff;
+      background: #5ab7de;
+    }
+  }
+
+  .display_sub {
+    li {
+      background: #eee;
     }
   }
 }
@@ -61,13 +110,29 @@
   font-size: 24px;
   padding: 15px;
 
-  span {
-    margin: 5px;
-  }
-
   .nav-btn {
+    display: block;
+    float: left;
     cursor: pointer;
     font-size: 28px;
+    transition: transform 0.3s;
+
+    &_click {
+      transform: rotate(90deg);
+      transition: transform 0.3s;
+    }
+  }
+
+  .nav-btn_click {
+    transform: rotate(90deg);
+    transition: transform 0.3s;
+  }
+
+  .nav-link {
+    display: block;
+    position: absolute;
+    left: 55px;
+    top: 15px;
   }
   @media (max-width: 767px) {
     display: block;
@@ -128,11 +193,11 @@
   border-right: 1px solid #56585a;
 }
 
+.sf-active,
 .sf-menu > li > a:hover,
-.sf-menu > li.sfHover > a {
+.sf-menu > li.sf-hover > a {
   color: #fff;
   background: #5ab7de;
-  border-right: 1px solid #4bb0db;
 }
 
 .sf-menu ul {
@@ -163,7 +228,7 @@
 }
 
 .sf-menu ul > li > a:hover,
-.sf-menu ul > li.sfHover > a {
+.sf-menu ul > li.sf-hover > a {
   color: #777777;
 }
 
