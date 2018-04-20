@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit {
 
   navBarClick() {
     if (this.navBar === 'fa-bars') {
-      this.navBar = 'fa-arrow-down';
+      this.navBar = 'fa-arrow-right';
     } else {
       this.navBar = 'fa-bars';
     }
