@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ContactItemComponent } from './components/footer-contacts/contact-item/contact-item.component';
 import { ContentComponent } from './components/content/content.component';
 import { CameraComponent } from './components/content/camera/camera.component';
 import { BannerComponent } from './components/content/banner/banner.component';
@@ -28,6 +27,7 @@ import { AdditionalInfoComponent } from './components/content-faqs/additional-in
 import { AppRoutingModule } from './/app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterContactsComponent } from './components/footer-contacts/footer-contacts.component';
+import {FooterContactsModule} from "./components/footer-contacts/footer-contacts.module";
 // import { ContentTestComponent } from './components/content-test/content-test.component';
 // import { TestPage1Component } from './components/content-test/test-page-1/test-page-1.component';
 // import { TestPage2Component } from './components/content-test/test-page-2/test-page-2.component';
@@ -43,7 +43,6 @@ import { FooterContactsComponent } from './components/footer-contacts/footer-con
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    ContactItemComponent,
     ContentComponent,
     CameraComponent,
     BannerComponent,
@@ -63,7 +62,6 @@ import { FooterContactsComponent } from './components/footer-contacts/footer-con
     SupportComponent,
     AdditionalInfoComponent,
     NotFoundComponent,
-    FooterContactsComponent,
     // ContentTestComponent,
     // TestPage1Component,
     // TestPage2Component,
@@ -74,7 +72,8 @@ import { FooterContactsComponent } from './components/footer-contacts/footer-con
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FooterContactsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

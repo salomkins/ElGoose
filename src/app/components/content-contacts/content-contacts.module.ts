@@ -5,11 +5,13 @@ import { ContentContactsRoutingModule } from './content-contacts-routing.module'
 import { ContentContactsComponent } from './content-contacts.component';
 import { MapComponent } from './map/map.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import {FooterContactsModule} from "../footer-contacts/footer-contacts.module";
 
 @NgModule({
   imports: [
     CommonModule,
-    ContentContactsRoutingModule
+    ContentContactsRoutingModule,
+    FooterContactsModule,
   ],
   declarations: [
     ContentContactsComponent,
