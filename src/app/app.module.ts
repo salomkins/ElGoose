@@ -24,10 +24,9 @@ import { ContentFaqsComponent } from './components/content-faqs/content-faqs.com
 import { AnswersComponent } from './components/content-faqs/answers/answers.component';
 import { SupportComponent } from './components/content-faqs/support/support.component';
 import { AdditionalInfoComponent } from './components/content-faqs/additional-info/additional-info.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { FooterContactsComponent } from './components/footer-contacts/footer-contacts.component';
-import {FooterContactsModule} from "./components/footer-contacts/footer-contacts.module";
+import {FooterContactsModule} from "./components-lib/footer-contacts/footer-contacts.module";
 // import { ContentTestComponent } from './components/content-test/content-test.component';
 // import { TestPage1Component } from './components/content-test/test-page-1/test-page-1.component';
 // import { TestPage2Component } from './components/content-test/test-page-2/test-page-2.component';
@@ -62,13 +61,6 @@ import {FooterContactsModule} from "./components/footer-contacts/footer-contacts
     SupportComponent,
     AdditionalInfoComponent,
     NotFoundComponent,
-    // ContentTestComponent,
-    // TestPage1Component,
-    // TestPage2Component,
-    //ContentContactsComponent,
-    //MapComponent,
-    //FeedbackComponent,
-    //ContentPrivacyComponent,
   ],
   imports: [
     BrowserModule,

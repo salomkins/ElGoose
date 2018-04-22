@@ -1,4 +1,4 @@
-import {Component, OnInit, HostListener, ElementRef, OnDestroy} from '@angular/core';
+import {Component, OnInit, ElementRef, OnDestroy} from '@angular/core';
 
 export class navItem {
   name: string;
@@ -50,7 +50,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   checkScroll() {
     const componentPosition = this.el.nativeElement.offsetTop;
     const scrollPosition = window.pageYOffset;
-    this.isStuck = scrollPosition >= componentPosition;
+    this.isStuck = scrollPosition - 50 >= componentPosition;
   }
 
   ngOnInit() {
