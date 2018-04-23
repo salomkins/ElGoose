@@ -6,20 +6,14 @@
         <p>Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla?</p>
         <div class="row off4">
           <div class="grid_3">
-            <ul class="marked-list wow fadeInRight">
-              <li><a href="#">Praesent vestibulum molestie</a></li>
-              <li><a href="#">Aenean nonummy hendrerit</a></li>
-              <li><a href="#">Vivamus eget nibh</a></li>
-              <li><a href="#">Etiam cursus leo vel metus</a></li>
-            </ul>
+            <div class="wow fadeInRight">
+              <app-marked-list [list]="list1"></app-marked-list>
+            </div>
           </div>
           <div class="grid_3">
-            <ul data-wow-delay="0.2s" class="marked-list wow fadeInRight">
-              <li><a href="#">Donec in velit vel ipsum auctor</a></li>
-              <li><a href="#">Vestibulum iaculis lacinia est</a></li>
-              <li><a href="#">Proin dictum elementum velit</a></li>
-              <li><a href="#">Fusce euismod consequat ante</a></li>
-            </ul>
+            <div data-wow-delay="0.2s" class="wow fadeInRight">
+              <app-marked-list [list]="list2"></app-marked-list>
+            </div>
           </div>
         </div>
       </div>

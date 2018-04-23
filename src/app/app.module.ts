@@ -26,7 +26,8 @@ import { SupportComponent } from './components/content-faqs/support/support.comp
 import { AdditionalInfoComponent } from './components/content-faqs/additional-info/additional-info.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import {FooterContactsModule} from "./components-lib/footer-contacts/footer-contacts.module";
+import { FooterContactsModule } from "./components-lib/footer-contacts/footer-contacts.module";
+import { MarkedListModule } from './components-lib/marked-list/marked-list.module';
 // import { ContentTestComponent } from './components/content-test/content-test.component';
 // import { TestPage1Component } from './components/content-test/test-page-1/test-page-1.component';
 // import { TestPage2Component } from './components/content-test/test-page-2/test-page-2.component';
@@ -66,6 +67,7 @@ import {FooterContactsModule} from "./components-lib/footer-contacts/footer-cont
     BrowserModule,
     AppRoutingModule,
     FooterContactsModule,
+    MarkedListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

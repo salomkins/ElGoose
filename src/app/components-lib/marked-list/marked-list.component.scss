@@ -1,0 +1,30 @@
+:host{
+  display: block;
+}
+
+/*==================  Marked List  ======================*/
+li {
+  position: relative;
+  padding-left: 41px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #62bfe6;
+}
+li a:before {
+  content: "\f00c";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  font-weight: 400;
+  font-size: 22px;
+  font-family: "FontAwesome";
+}
+li + li {
+  margin-top: 0px;
+  border-top: 1px solid #e5e5e5;
+}
+a:hover {
+  color: #777777;
+}
