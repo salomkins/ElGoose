@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule }   from '@angular/forms';
 
 import { PartnersService } from './data/partners.service';
+import { mf } from '../../../components-lib/my-functions/mf.service';
 
 import { TestPage1RoutingModule } from './test-page-1-routing.module';
 import { TestPage1Component } from './test-page-1.component';
@@ -24,6 +25,9 @@ import { PartnersReportComponent } from './partners-report/partners-report.compo
     EditComponent,
     PartnersReportComponent,
   ],
-  providers: [PartnersService]
+  providers: [
+    PartnersService,
+    mf,
+  ]
 })
 export class TestPage1Module { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { mf } from '../../../components-lib/my-functions/mf.service';
 
 @Component({
   selector: 'app-well',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WellComponent implements OnInit {
 
-  constructor() { }
+  kuku() {
+    this.ff.m('kuku');
+  }
+
+  constructor(private ff: mf) { }
 
   ngOnInit() {
   }
-
 }

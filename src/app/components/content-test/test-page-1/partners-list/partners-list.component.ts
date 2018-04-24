@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { partnersItem } from '../data/partners-item';
 import { PartnersService } from '../data/partners.service';
+import { mf } from '../../../../components-lib/my-functions/mf.service';
 
 @Component({
   selector: 'app-partners-list',
@@ -11,6 +12,10 @@ import { PartnersService } from '../data/partners.service';
 export class PartnersListComponent implements OnInit {
   myPartners: partnersItem[];
   err: number = 0;
+
+  kuku() {
+    this.ff.m('kuku');
+  }
 
   activeItem: partnersItem;
   readActiveItem(item: partnersItem) {
@@ -52,7 +57,10 @@ export class PartnersListComponent implements OnInit {
     this.err = this._PartnersService.editPartner(this.editItem, e);
   }
 
-  constructor(private _PartnersService: PartnersService) { }
+  constructor(
+    private _PartnersService: PartnersService,
+    private ff: mf
+  ) { }
 
   ngOnInit() {
     this.myPartners = this._PartnersService.getPartners();

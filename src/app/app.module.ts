@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {mf} from './components-lib/my-functions/mf.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -69,7 +70,7 @@ import { MarkedListModule } from './components-lib/marked-list/marked-list.modul
     FooterContactsModule,
     MarkedListModule,
   ],
-  providers: [],
+  providers: [mf],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
