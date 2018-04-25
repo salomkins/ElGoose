@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { mf } from '../../../components-lib/my-functions/mf.service';
 
 @Component({
   selector: 'app-well',
@@ -8,12 +7,45 @@ import { mf } from '../../../components-lib/my-functions/mf.service';
 })
 export class WellComponent implements OnInit {
 
-  kuku() {
-    this.ff.m('kuku');
-  }
+  list: {
+    iconName: string;
+    caption: string;
+    link: string;
+    text: string;
+  }[][];
 
-  constructor(private ff: mf) { }
+  constructor() { }
 
   ngOnInit() {
+    this.list = [
+      [
+        {
+          iconName: 'fa-comments',
+          caption: 'Incididunt ut labore et dolore',
+          link: '',
+          text: 'Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor.'
+        },
+        {
+          iconName: 'fa-calendar-o',
+          caption: 'Incididunt ut labore et dolore',
+          link: '',
+          text: 'Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor.'
+        },
+      ],
+      [
+        {
+          iconName: 'fa-group',
+          caption: 'Incididunt ut labore et dolore',
+          link: '',
+          text: 'Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor.'
+        },
+        {
+          iconName: 'fa-thumbs-up',
+          caption: 'Incididunt ut labore et dolore',
+          link: '',
+          text: 'Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor.'
+        },
+      ],
+    ]
   }
 }

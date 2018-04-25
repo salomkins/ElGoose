@@ -29,13 +29,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterContactsModule } from "./components-lib/footer-contacts/footer-contacts.module";
 import { MarkedListModule } from './components-lib/marked-list/marked-list.module';
-// import { ContentTestComponent } from './components/content-test/content-test.component';
-// import { TestPage1Component } from './components/content-test/test-page-1/test-page-1.component';
-// import { TestPage2Component } from './components/content-test/test-page-2/test-page-2.component';
-//import { ContentContactsComponent } from './components/content-contacts/content-contacts.component';
-//import { MapComponent } from './components/content-contacts/map/map.component';
-//import { FeedbackComponent } from './components/content-contacts/feedback/feedback.component';
-//import { ContentPrivacyComponent } from './components/content-privacy/content-privacy.component';
+import { ProductListModule } from './components-lib/product-list/product-list.module';
 
 
 @NgModule({
@@ -69,6 +63,7 @@ import { MarkedListModule } from './components-lib/marked-list/marked-list.modul
     AppRoutingModule,
     FooterContactsModule,
     MarkedListModule,
+    ProductListModule,
   ],
   providers: [mf],
   bootstrap: [AppComponent]
