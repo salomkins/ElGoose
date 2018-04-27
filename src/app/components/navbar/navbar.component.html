@@ -1,19 +1,23 @@
-<div class="stuck_container" [class.is_stuck]="isStuck">
-  <div class="container">
-    <nav class="nav">
-      <ul class="sf-menu">
-        <li *ngFor="let item of navItems" [class.sf-hover]="item===hoverItem"
-        routerLinkActive="sf-active" [routerLinkActiveOptions]="{exact: false}"
-        (mouseenter)="hoverItem = item" (mouseleave)="hoverItem = null">
-          <a routerLink="{{item.link}}" (click)="activeItem=item">{{item.name}}</a>
-          <ul *ngIf="item.subMenu" [class.display_sub]="item===hoverItem">
-            <li *ngFor="let itemSubMenu of item.subMenu">
-              <a routerLink="{{itemSubMenu.link}}" (click)="activeItem=item">{{itemSubMenu.name}}</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+<div class="nav_box">
+  <div class="stuck_container"
+  [class.is_stuck]="isStuck"
+  [class.is_stuck_on]="isStuckOn">
+    <div class="container">
+      <nav class="nav">
+        <ul class="sf-menu">
+          <li *ngFor="let item of navItems" [class.sf-hover]="item===hoverItem"
+          routerLinkActive="sf-active" [routerLinkActiveOptions]="{exact: false}"
+          (mouseenter)="hoverItem = item" (mouseleave)="hoverItem = null">
+            <a routerLink="{{item.link}}" (click)="activeItem=item">{{item.name}}</a>
+            <ul *ngIf="item.subMenu" [class.display_sub]="item===hoverItem">
+              <li *ngFor="let itemSubMenu of item.subMenu">
+                <a routerLink="{{itemSubMenu.link}}" (click)="activeItem=item">{{itemSubMenu.name}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
 

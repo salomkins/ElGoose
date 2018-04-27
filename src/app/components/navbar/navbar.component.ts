@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   hoverItem: navItem;
   activeItem: navItem;
   isStuck: boolean = false;
+  isStuckOn: boolean = false;
   navBar: string;
   subMenuBar: string;
 
@@ -50,7 +51,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
   checkScroll() {
     const componentPosition = this.el.nativeElement.offsetTop;
     const scrollPosition = window.pageYOffset;
-    this.isStuck = scrollPosition - 50 >= componentPosition;
+    this.isStuckOn = this.isStuck;
+    if((!this.isStuck && scrollPosition - 60 >= componentPosition) ||
+    (this.isStuck && scrollPosition - 25 < componentPosition)){
+      this.isStuck = !this.isStuck;
+      //setTimeout(function(){alert(this.isStuck);}, 0);
+      //pajautāt par ng-click-outside !!!
+    }
   }
 
   ngOnInit() {

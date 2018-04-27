@@ -138,12 +138,19 @@
   }
 }
 //sm_menu END
+.nav_box {
+  position: relative;
+  height: 80px;
+  background: rgba(0,0,0,0);
+}
 
 .stuck_container {
-  position: relative;
-  margin-top: 22px;
+  position: absolute;
   background: #434547;
-
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: 0;
   .display_sub {
     display: block;
   }
@@ -153,9 +160,13 @@
   z-index: 9999;
   border-bottom: 1px solid #888;
   position: fixed;
-  top: -22px;
-  left: 0;
-  right: 0;
+  top: -80px;
+  bottom: auto;
+}
+
+.is_stuck_on {
+    top: 0;
+    transition: top .5s;
 }
 
 .sf-menu {
@@ -256,7 +267,7 @@
   color: #62bfe6;
 }
 @media (max-width: 767px) {
-  .stuck_container {
+  .nav_box {
     display: none;
   }
 }
