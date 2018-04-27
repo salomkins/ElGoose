@@ -73,12 +73,20 @@
   }
 
   .sm_submenu {
-    display: none;
+    //display: none;
     padding-left: 10px;
+    //---falšā animācija
+    display: block;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: max-height .4s ease-out;
   }
 
   .display_sub {
     display: block;
+    //---falšā animācija
+    max-height: 400px;
+    transition: max-height .4s ease-in;
 
     li {
       background: #eee;
