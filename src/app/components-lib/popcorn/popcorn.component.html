@@ -1,3 +1,7 @@
 <app-popcorn-form (titleAdded)="handleTitleAdd($event)"></app-popcorn-form>
-<app-popcorn-list [titles]="titles" (listChanged)="handleListChanged()"></app-popcorn-list>
-<app-popcorn-notification [message]="message"></app-popcorn-notification>
+<app-popcorn-list [titles]="titles"></app-popcorn-list>
+<app-popcorn-notification  *ngIf="message" [message]="message"></app-popcorn-notification>
+
+Popcorn: {{getPopcorn()}}
+
+<button (click)="addPopcorn()"> add popcorn</button>

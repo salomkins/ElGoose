@@ -5,6 +5,7 @@ import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
 import { NotificationComponent } from './notification/notification.component';
 import {FormsModule} from "@angular/forms";
+import {PopcornService} from "./popcorn.service";
 
 @NgModule({
   imports: [
@@ -19,6 +20,9 @@ import {FormsModule} from "@angular/forms";
   ],
   exports: [
     PopcornComponent
+  ],
+  providers: [
+    PopcornService
   ]
 })
 export class PopcornModule { }

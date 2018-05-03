@@ -11,6 +11,7 @@ import { PartnersListComponent } from './partners-list/partners-list.component';
 import { DecriptionComponent } from './decription/decription.component';
 import { EditComponent } from './edit/edit.component';
 import { PartnersReportComponent } from './partners-report/partners-report.component';
+import {PopcornModule} from "../../../components-lib/popcorn/popcorn.module";
 
 @NgModule({
   imports: [
@@ -26,7 +27,7 @@ import { PartnersReportComponent } from './partners-report/partners-report.compo
     PartnersReportComponent,
   ],
   providers: [
-    PartnersService,
+    // PartnersService,
     //mf,
   ]
 })

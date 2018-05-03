@@ -1,5 +1,9 @@
+<h1>IKS: {{getIks()}}</h1>
 <ol>
   <li *ngFor="let title of titles">
     {{title}}
   </li>
 </ol>
+<button (click)="toggleIks()">
+  Set iks {{!iks}}
+</button>

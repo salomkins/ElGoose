@@ -6,17 +6,21 @@ import { ContentTestComponent } from './content-test.component';
 //import { TestPage1Component } from './test-page-1/test-page-1.component';
 import { TestPage2Component } from './test-page-2/test-page-2.component';
 import {PopcornModule} from "../../components-lib/popcorn/popcorn.module";
+import {PopcornService} from "../../components-lib/popcorn/popcorn.service";
 
 @NgModule({
   imports: [
     CommonModule,
     ContentTestRoutingModule,
-    PopcornModule
+    PopcornModule,
   ],
   declarations: [
     ContentTestComponent,
     //TestPage1Component,
     TestPage2Component
-  ]
+  ],
+  // providers: [
+  //   PopcornService
+  // ]
 })
 export class ContentTestModule { }
