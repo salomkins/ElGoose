@@ -1,4 +1,5 @@
 <app-popcorn-form (titleAdded)="handleTitleAdd($event)"></app-popcorn-form>
+<app-popcorn-form #tryEventSubscription></app-popcorn-form>
 <app-popcorn-list [titles]="titles"></app-popcorn-list>
 <app-popcorn-notification  *ngIf="message" [message]="message"></app-popcorn-notification>
 

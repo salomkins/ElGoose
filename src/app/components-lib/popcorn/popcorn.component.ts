@@ -1,6 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterContentInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {PopcornService} from "./popcorn.service";
 import {Subscription} from "rxjs/Subscription";
+import {FormComponent} from "./form/form.component";
 
 @Component({
   selector: 'app-popcorn',
@@ -8,12 +9,16 @@ import {Subscription} from "rxjs/Subscription";
   styleUrls: ['./popcorn.component.scss'],
   providers: [ PopcornService ]
 })
-export class PopcornComponent implements OnInit, OnDestroy {
+export class PopcornComponent implements OnInit, OnDestroy, AfterContentInit {
   message = '';
   private _titles: string[] = [];
   private titlesSubscription: Subscription;
+  @ViewChild('tryEventSubscription') formElement: FormComponent;
 
-  constructor( private popcornService: PopcornService) { }
+  constructor( private popcornService: PopcornService) {
+
+    console.log('in constructor', this.formElement);
+  }
 
   ngOnInit() {
     this.updateTitles();
@@ -23,6 +28,13 @@ export class PopcornComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     this.titlesSubscription.unsubscribe();
+  }
+
+  ngAfterContentInit() {
+    console.log('in ngAfterContentInit', this.formElement);
+    this.formElement.titleAdded.subscribe(title => {
+      console.log('second title form used', title);
+    });
   }
 
 
