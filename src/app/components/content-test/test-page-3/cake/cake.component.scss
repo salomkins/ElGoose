@@ -5,8 +5,8 @@
 .cake-table {
   width: 100%;
   border-collapse: collapse;
-  > tbody {
-    > tr {
+  //> tbody {
+     tr {
       > th {
         text-align: left;
         font-weight: bold;
@@ -17,6 +17,6 @@
         border-bottom: 1px solid gray;
         padding: .2em .7em;
       }
-    }
-  }
+     }
+  //}
 }

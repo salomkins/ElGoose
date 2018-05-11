@@ -261,19 +261,19 @@
   z-index: 4;
 }
 
-.sf-menu > li > ul > li > .sf-with-ul {
-  position: relative;
-}
-
-.sf-menu > li > ul > li > .sf-with-ul:before {
-  position: absolute;
-  right: 19px;
-  top: 0;
-  margin-left: -6px;
-  content: "";
-  font: 400 16px/50px "FontAwesome";
-  color: #62bfe6;
-}
+// .sf-menu > li > ul > li > .sf-with-ul {
+//   position: relative;
+// }
+//
+// .sf-menu > li > ul > li > .sf-with-ul:before {
+//   position: absolute;
+//   right: 19px;
+//   top: 0;
+//   margin-left: -6px;
+//   content: "";
+//   font: 400 16px/50px "FontAwesome";
+//   color: #62bfe6;
+// }
 @media (max-width: 767px) {
   .nav_box {
     display: none;

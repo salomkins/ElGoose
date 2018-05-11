@@ -10,15 +10,13 @@
   border-radius: 4px;
   margin: 3px;
   padding: 5px;
-  &::ng-deep {
+&::ng-deep {
     .cake-table {
       > tbody {
-        > tr {
-          &:last-child {
-            > th,
-            > td {
-              border-bottom: none;
-            }
+        > tr:last-child {
+          > th,
+          > td {
+            border-bottom: none;
           }
         }
       }

@@ -55,7 +55,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if((!this.isStuck && scrollPosition - 60 >= componentPosition) ||
     (this.isStuck && scrollPosition - 25 < componentPosition)){
       this.isStuck = !this.isStuck;
-      //setTimeout(function(){alert(this.isStuck);}, 0);
+      if (!this.isStuck) this.isStuckOn = this.isStuck;
+      //setTimeout(()=>{this.isStuckOn = this.isStuck;}, 0);
       //pajautāt par ng-click-outside !!!
     }
   }

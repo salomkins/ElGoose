@@ -27,7 +27,7 @@ import {PopcornModule} from "../../../components-lib/popcorn/popcorn.module";
     PartnersReportComponent,
   ],
   providers: [
-    // PartnersService,
+    PartnersService,
     //mf,
   ]
 })
