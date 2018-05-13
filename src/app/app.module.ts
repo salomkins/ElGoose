@@ -30,6 +30,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterContactsModule } from "./components-lib/footer-contacts/footer-contacts.module";
 import { MarkedListModule } from './components-lib/marked-list/marked-list.module';
 import { ProductListModule } from './components-lib/product-list/product-list.module';
+import { BtnModule } from './components-lib/btn/btn.module';
 import {PopcornService} from "./components-lib/popcorn/popcorn.service";
 
 
@@ -65,6 +66,7 @@ import {PopcornService} from "./components-lib/popcorn/popcorn.service";
     FooterContactsModule,
     MarkedListModule,
     ProductListModule,
+    BtnModule,
   ],
   providers: [mf],
   bootstrap: [AppComponent]

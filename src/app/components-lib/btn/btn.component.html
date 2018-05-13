@@ -1,0 +1,12 @@
+<a *ngIf="!type" class="{{btnStyle}}" routerLink={{link}}>
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</a>
+
+
+<button *ngIf="type === 'submit'" class="{{btnStyle}}" type={{type}}>
+<ng-container *ngTemplateOutlet="content"></ng-container>
+</button>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>
