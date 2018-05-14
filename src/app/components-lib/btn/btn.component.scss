@@ -1,8 +1,8 @@
 :host {
   display: inline-block;
   @media (max-width: 767px) {
-      width: 100%;
-    }
+    width: 100%;
+  }
 }
 
 .btn,
@@ -18,16 +18,14 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-
   -moz-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   -webkit-transition: 0.3s all ease;
-  transition: .3s all ease;
-
+  transition: 0.3s all ease;
   margin-top: 32px;
 }
 
-.btn[type='submit']{
+.btn[type='submit'] {
   margin-top: 0;
   width: 100%;
   font-size: 17px;
@@ -35,12 +33,13 @@
   font-weight: 600;
 }
 
-.btn:hover,
-.btn2:hover {
+.btn2:hover,
+.btn:hover {
   background: #4ab5e2;
 }
-.btn:active,
-.btn2:active {
+
+.btn2:active,
+.btn:active {
   background: #22a1d7;
 }
 
@@ -54,7 +53,8 @@
   background: #eaeaea;
 }
 
-.btn2:hover, .btn2:active {
+.btn2:active,
+.btn2:hover {
   color: #fff;
 }
 
@@ -64,7 +64,7 @@
   margin-right: 20px;
   margin-top: 20px;
   @media (max-width: 767px) {
-      width: 100%;
-      margin-right: 0;
-    }
+    width: 100%;
+    margin-right: 0;
+  }
 }
