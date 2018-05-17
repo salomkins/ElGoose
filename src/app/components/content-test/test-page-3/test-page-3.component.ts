@@ -1,6 +1,7 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {CakeType} from "./cake/cake.type";
 import {CakeService} from "./cake/cake.service";
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-test-page-3',
@@ -11,12 +12,30 @@ import {CakeService} from "./cake/cake.service";
     CakeService
   ]
 })
-export class TestPage3Component implements OnInit {
+export class TestPage3Component implements OnInit, OnDestroy {
   private _cakes: CakeType[] = [];
-  constructor(private cakeService: CakeService) { }
+  private getCakesSubscription: Subscription;
+
+  constructor(private cakeService: CakeService,
+              private changeDetector: ChangeDetectorRef) {
+  }
 
   ngOnInit() {
-      this.cakes = this.cakeService.getCakes();
+    this.getCakesSubscription = this.cakeService.getCakes().subscribe(
+      (response) => {
+        this.cakes = response;
+        this.changeDetector.detectChanges();
+      },
+      (error) => {
+        console.log(error);
+        this.cakes = [];
+        this.changeDetector.detectChanges();
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    this.getCakesSubscription.unsubscribe();
   }
 
   get cakes(): CakeType[] {
