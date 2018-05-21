@@ -11,13 +11,14 @@ import { PartnersListComponent } from './partners-list/partners-list.component';
 import { DecriptionComponent } from './decription/decription.component';
 import { EditComponent } from './edit/edit.component';
 import { PartnersReportComponent } from './partners-report/partners-report.component';
-import {PopcornModule} from "../../../components-lib/popcorn/popcorn.module";
+import { LoadIconModule } from '../../../components-lib/load-icon/load-icon.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    TestPage1RoutingModule
+    TestPage1RoutingModule,
+    LoadIconModule,
   ],
   declarations: [
     TestPage1Component,

@@ -31,7 +31,8 @@ import { FooterContactsModule } from "./components-lib/footer-contacts/footer-co
 import { MarkedListModule } from './components-lib/marked-list/marked-list.module';
 import { ProductListModule } from './components-lib/product-list/product-list.module';
 import { BtnModule } from './components-lib/btn/btn.module';
-import {PopcornService} from "./components-lib/popcorn/popcorn.service";
+import { PopcornService } from "./components-lib/popcorn/popcorn.service";
+import { LoadIconModule } from './components-lib/load-icon/load-icon.module';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import {PopcornService} from "./components-lib/popcorn/popcorn.service";
     MarkedListModule,
     ProductListModule,
     BtnModule,
+    LoadIconModule,
   ],
   providers: [mf],
   bootstrap: [AppComponent]

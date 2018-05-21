@@ -12,6 +12,7 @@ import {Subscription} from "rxjs/Subscription";
     CakeService
   ]
 })
+
 export class TestPage3Component implements OnInit, OnDestroy {
   private _cakes: CakeType[] = [];
   private getCakesSubscription: Subscription;

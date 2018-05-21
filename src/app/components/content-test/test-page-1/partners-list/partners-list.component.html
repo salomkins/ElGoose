@@ -2,8 +2,11 @@
   <a routerLink="report" class="btn-my">Atskaite >></a>
   <div class="row">
     <div class="grid_3">
-      <h3 (click)="kuku()">Partneru saraksts</h3>
+      <h3>Partneru saraksts</h3>
       <!-- <ul (mouseleave)="clearActiveItem()"> -->
+      <ng-container *ngIf="!myPartners">
+        <app-load-icon></app-load-icon>
+      </ng-container>
       <div class="box-list">
 
         <ul>
@@ -18,17 +21,18 @@
       </div>
     </div>
 
-    <div class="grid_4 box-content">
-      <app-decription caption="Apraksts" [item]="activeItem"></app-decription>
-    </div>
+    <ng-container *ngIf="myPartners">
+      <div class="grid_4 box-content">
+        <app-decription caption="Apraksts" [item]="activeItem"></app-decription>
+      </div>
 
-    <div class="grid_4 box-content">
-      <app-edit caption="Labot sarakstu" [item]="editItem" [err]="err"
-      (onAddItem)="addItem($event)"
-      (onDeleteItem)="deleteItem($event)"
-      (onOkItem)="okItem($event)"
-      (onCancel)="cancel($event)"></app-edit>
-    </div>
-
+      <div class="grid_4 box-content">
+        <app-edit caption="Labot sarakstu" [item]="editItem" [err]="err"
+        (onAddItem)="addItem($event)"
+        (onDeleteItem)="deleteItem($event)"
+        (onOkItem)="okItem($event)"
+        (onCancel)="cancel($event)"></app-edit>
+      </div>
+    </ng-container>
   </div>
 </div>

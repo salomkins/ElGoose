@@ -1,14 +1,33 @@
 import { myPartnersList } from './data-partners';
 import { Injectable } from '@angular/core';
 import { partnersItem } from './partners-item';
+import {Observable} from "rxjs/Observable";
+import {of} from "rxjs/observable/of";
+
 
 @Injectable()
 export class PartnersService {
-  myPartners: partnersItem[] = myPartnersList;
+  //myPartners: partnersItem[] = myPartnersList;
+private myPartners: partnersItem[] = null;
 
-  getPartners(): partnersItem[] {
-    return this.myPartners;
-  }
+constructor() {
+  this.myPartners = myPartnersList;
+}
+
+  // getPartners(): partnersItem[] {
+  //   return this.myPartners;
+  // }
+
+getPartners(): Observable<partnersItem[]> {
+  //return of(this.myPartners);
+  //return of(this.myPartners.slice());
+  return new Observable<partnersItem[]>((observer) => {
+    setTimeout(() => {
+      //observer.next(this.myPartners.slice());
+      observer.next(this.myPartners);
+    }, 1000);
+  });
+}
 
   addPartner(additem: { item: partnersItem; add: boolean }, activeItem: partnersItem): number {
     let errN: number = this.validatePartner(additem.item);

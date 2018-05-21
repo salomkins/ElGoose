@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { partnersItem } from '../data/partners-item';
 import { PartnersService } from '../data/partners.service';
-import { mf } from '../../../../components-lib/my-functions/mf.service';
+//import { mf } from '../../../../components-lib/my-functions/mf.service';
+
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-partners-list',
   templateUrl: './partners-list.component.html',
   styleUrls: ['./partners-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class PartnersListComponent implements OnInit {
   myPartners: partnersItem[];
-  err: number = 0;
+  private getPartnersSubscription: Subscription;
 
-  kuku() {
-    this.ff.m('kuku');
-  }
+  err: number = 0;
 
   activeItem: partnersItem;
   readActiveItem(item: partnersItem) {
@@ -59,12 +60,26 @@ export class PartnersListComponent implements OnInit {
 
   constructor(
     private _PartnersService: PartnersService,
-    private ff: mf
-  ) { }
+    private changeDetector: ChangeDetectorRef ) { }
 
   ngOnInit() {
-    this.myPartners = this._PartnersService.getPartners();
+    this.getPartnersSubscription = this._PartnersService.getPartners().subscribe(
+      (response) => {
+        this.myPartners = response;
+        this.changeDetector.detectChanges();
+      },
+      (error) => {
+        console.log(error);
+        this.myPartners = null;
+        this.changeDetector.detectChanges();
+      }
+    );
     this.editItem = this.clearItem();
     this.activeItem = null;
   }
+
+    ngOnDestroy() {
+      this.getPartnersSubscription.unsubscribe();
+    }
+
 }

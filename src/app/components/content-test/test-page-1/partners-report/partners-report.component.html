@@ -1,17 +1,22 @@
 <div class="container">
-  <a routerLink=".." class="btn-my"><< Partneru saraksts</a>
-  <div class="row">
-    <div class="grid_6">
-      <h3>Sadarbības partneri</h3>
-      <div class="box-grid">
-        <span class="header-grid">Nosaukums</span>
-        <span class="header-grid">Valsts un reģistr. numurs</span>
-        <ng-container *ngFor="let item of myPartners">
-          <span>{{item.name}}</span>
-          <span>{{item.countryCode}} {{item.regNr}}</span>
-        </ng-container>
+  <a routerLink=".." class="btn-my">
+    << Partneru saraksts</a>
+      <div class="row">
+        <div class="grid_6">
+          <h3>Sadarbības partneri</h3>
+          <ng-container *ngIf="!myPartners">
+            <app-load-icon></app-load-icon>
+          </ng-container>
+          <ng-container *ngIf="myPartners">
+            <div class="box-grid">
+              <span class="header-grid">Nosaukums</span>
+              <span class="header-grid">Valsts un reģistr. numurs</span>
+              <ng-container *ngFor="let item of myPartners">
+                <span>{{item.name}}</span>
+                <span>{{item.countryCode}} {{item.regNr}}</span>
+              </ng-container>
+            </div>
+          </ng-container>
+        </div>
       </div>
-    </div>
-
-  </div>
 </div>

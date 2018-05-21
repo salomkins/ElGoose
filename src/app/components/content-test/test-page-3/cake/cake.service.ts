@@ -12,9 +12,8 @@ export class CakeService {
     this.cakes = CakesData;
   }
 
-
   getCakes(): Observable<CakeType[]> {
-    // return of(this.cakes.slice());
+    //return of(this.cakes.slice());
     return new Observable<CakeType[]>((observer) => {
       setTimeout(() => {
         observer.next(this.cakes.slice());
