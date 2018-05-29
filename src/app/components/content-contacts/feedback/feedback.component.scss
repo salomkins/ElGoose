@@ -139,3 +139,10 @@ label textarea {
     width: 100%;
   }
 }
+
+.is-valid {
+  border-bottom: 3px solid green;
+}
+.has-error {
+  border-bottom: 3px solid red;
+}
