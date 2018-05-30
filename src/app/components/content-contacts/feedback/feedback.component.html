@@ -1,7 +1,7 @@
 <section class="well1">
   <div class="container">
     <h2>Feedback</h2>
-    <form method="post" action="bat/rd-mailform.php" class="mailform off2" (submit)="handleFormSubmit()">
+    <form  action="bat/rd-mailform.php" class="mailform off2" (submit)="handleFormSubmit()">
       <input type="hidden" name="form-type" value="contact">
       <fieldset class="row">
         <label class="grid_4"
@@ -18,7 +18,7 @@
             'has-error': validatedFields.phone === false
           }">
           <input type="text" name="phone" placeholder="Telephone:" [(ngModel)]="feedback.phone"
-                 (blur)="validateField('phone')" data-constraints="@Phone">
+                 (change)="validateField('phone')" data-constraints="@Phone">
         </label>
         <label class="grid_4"
                [ngClass]="{

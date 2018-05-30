@@ -27,7 +27,7 @@ export class FeedbackComponent implements OnInit {
     if (!this.feedback.hasOwnProperty(field)) {
       return;
     }
-
+    this.feedback[field] = this.feedback[field].trim()
     switch (field) {
       case 'name':
         console.log('validating', field);
@@ -35,9 +35,15 @@ export class FeedbackComponent implements OnInit {
         break;
       case 'phone':
         console.log('validating', field);
+        // parbaudam vai ir tuks
         this.validatedFields[field] = !this.isEmpty(this.feedback[field]);
+        if (this.validatedFields[field] === false) {
+          return;
+        }
+        // parbaudam vai ir phone
+        this.validatedFields[field] = this.isPhoneValid(this.feedback[field]);
         break;
-      case 'email':
+          case 'email':
         console.log('validating', field);
         // parbaudam vai ir tuks
         this.validatedFields[field] = !this.isEmpty(this.feedback[field]);
@@ -80,6 +86,11 @@ export class FeedbackComponent implements OnInit {
   private isEmailValid(email: string): boolean {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
+  }
+
+  private isPhoneValid(phone: string): boolean {
+    const re = /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/;
+    return re.test(String(phone).toLowerCase());
   }
 
   private sendFeedback() {
