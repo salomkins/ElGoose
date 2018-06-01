@@ -9,13 +9,11 @@ import { ContentFaqsComponent } from './components/content-faqs/content-faqs.com
 
 //import { ContentContactsComponent } from './components/content-contacts/content-contacts.component';
 //import { ContentPrivacyComponent } from './components/content-privacy/content-privacy.component';
-
 import { NotFoundComponent } from './components/not-found/not-found.component';
 //
 // import { ContentTestComponent } from './components/content-test/content-test.component';
 // import { TestPage1Component } from './components/content-test/test-page-1/test-page-1.component';
 // import { TestPage2Component } from './components/content-test/test-page-2/test-page-2.component';
-
 const routes: Routes = [
   { path: 'home', component: ContentComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },

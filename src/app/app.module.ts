@@ -12,7 +12,6 @@ import { CameraComponent } from './components/content/camera/camera.component';
 import { BannerComponent } from './components/content/banner/banner.component';
 import { WellComponent } from './components/content/well/well.component';
 import { Well1Component } from './components/content/well1/well1.component';
-
 import { ContentServicesComponent } from './components/content-services/content-services.component';
 import { MobileCenterComponent } from './components/content-services/mobile-center/mobile-center.component';
 import { CanHelpComponent } from './components/content-services/can-help/can-help.component';
@@ -36,6 +35,7 @@ import { PopcornService } from "./components-lib/popcorn/popcorn.service";
 import { LoadIconModule } from './components-lib/load-icon/load-icon.module';
 import {FormsModule} from "@angular/forms";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,10 +43,10 @@ import {FormsModule} from "@angular/forms";
     FooterComponent,
     NavbarComponent,
     ContentComponent,
-    // CameraComponent,
-    // BannerComponent,
-    // WellComponent,
-    // Well1Component,
+    CameraComponent,
+    BannerComponent,
+    WellComponent,
+    Well1Component,
     ContentServicesComponent,
     MobileCenterComponent,
     CanHelpComponent,
