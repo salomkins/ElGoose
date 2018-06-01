@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  padding: 2px;
+}
+.cake-table {
+  width: 100%;
+  border-collapse: collapse;
+  //> tbody {
+     tr {
+      > th {
+        text-align: left;
+        font-weight: bold;
+        width: 30%;
+      }
+      > th,
+      > td {
+        border-bottom: 1px solid gray;
+        padding: .2em .7em;
+      }
+     }
+  //}
+}

@@ -10,6 +10,7 @@ export class ContactItemComponent implements OnInit {
   private _iconName = '';
   private _tag = '';
   private _link = '';
+  private _effects = '';
 
   constructor() { }
 
@@ -38,6 +39,14 @@ export class ContactItemComponent implements OnInit {
   @Input('link')
   set link(value: string) {
     this._link = value;
+  }
+  get effects(): string {
+    return this._effects;
+  }
+
+  @Input('effects')
+  set effects(value: string) {
+    this._effects = value;
   }
 
 }

@@ -1,0 +1,68 @@
+:host{
+  display: block;
+  background-color: #eef;
+}
+.container {
+  padding: 20px 0 50px;
+}
+
+.box-list {
+  height: 250px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.partners-item{
+  display: block;
+  line-height: 20px;
+  min-height: 20px;
+  padding: 5px;
+  margin: 0;
+  border-bottom: 1px solid #aaa;
+  &:hover{
+    cursor:pointer;
+  }
+}
+.box-content{
+  min-height: 150px;
+}
+.edit {
+  background-color: #a0db8e;
+}
+.active {
+  background-color: #ddd;
+}
+
+//
+//
+//
+.btn-my {
+  display: inline-block;
+  width: 250px;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  background: #62bfe6;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  @media (max-width: 767px) {
+    display: block;
+    width: 80%;
+    margin: 0 auto 20px;
+  }
+}
+
+.btn-my:hover {
+  background: #4ab5e2;
+}
+
+.btn-my:active {
+  background: #22a1d7;
+}

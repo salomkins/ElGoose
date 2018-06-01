@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  color: #888a8c;
+  background: #434547;
+  font: 400 14px/28px "Roboto", sans-serif;
+  -webkit-text-size-adjust: none;
+}
+
+.well3 {
+  padding-top: 59px;
+  padding-bottom: 61px;
+}
+
+/*==================  Contact List  =====================*/
+.contact-list {
+  color: #888a8c;
+  font-size: 16px;
+}
+.contact-list .box {
+  display: table;
+}
+.contact-list .box_cnt__no-flow {
+  vertical-align: middle;
+  display: table-cell;
+  padding-left: 30px;
+}
+.contact-list .box + .box {
+  margin-top: 30px;
+}
+.contact-list a[href^="callto:"] {
+  font-size: 24px;
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  .contact-list a[href^="callto:"] {
+    font-size: 18px;
+  }
+}
+.contact-list a:hover {
+  color: #62bfe6;
+}

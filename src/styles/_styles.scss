@@ -78,7 +78,8 @@ a:active {
 }
 
 a[href^="tel:"],
-a[href^="callto:"] {
+a[href^="callto:"],
+.callto {
   color: inherit;
   text-decoration: none;
 }
@@ -128,9 +129,6 @@ hr {
 /*=======================================================
 					   Main Layout
 =========================================================*/
-* + .btn {
-  margin-top: 32px;
-}
 
 * + .row {
   margin-top: 18px;
@@ -188,9 +186,6 @@ img + h3 {
   margin-top: 20px;
 }
 
-.marked-list + .btn {
-  margin-top: 17px;
-}
 
 .grid_2 img + img {
   margin-top: 30px;
@@ -211,8 +206,4 @@ img + h3 {
 .off2 + hr,
 .off2 + hr + .row {
   margin-top: 50px;
-}
-
-p + .btn_wr {
-  margin-top: 33px;
 }

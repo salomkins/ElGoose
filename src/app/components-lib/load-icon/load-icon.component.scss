@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.loader {
+  margin: 20px auto;
+  opacity: .5;
+  border: 6px solid #62bfe6;;
+  border-radius: 50%;
+  border-top: 6px solid #3498db;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

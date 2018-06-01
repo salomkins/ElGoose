@@ -1,0 +1,45 @@
+<section class="well1">
+  <div class="container">
+    <h2>Feedback</h2>
+    <form method="post" action="bat/rd-mailform.php" class="mailform off2" (submit)="handleFormSubmit()">
+      <input type="hidden" name="form-type" value="contact">
+      <fieldset class="row">
+        <label class="grid_4"
+               [ngClass]="{
+            'is-valid': validatedFields.name === true,
+            'has-error': validatedFields.name === false
+          }">
+          <input type="text" name="name" placeholder="Your Name:" [(ngModel)]="feedback.name"
+                 (blur)="validateField('name')" data-constraints="@LettersOnly @NotEmpty">
+        </label>
+        <label class="grid_4"
+               [ngClass]="{
+            'is-valid': validatedFields.phone === true,
+            'has-error': validatedFields.phone === false
+          }">
+          <input type="text" name="phone" placeholder="Telephone:" [(ngModel)]="feedback.phone"
+                 (blur)="validateField('phone')" data-constraints="@Phone">
+        </label>
+        <label class="grid_4"
+               [ngClass]="{
+            'is-valid': validatedFields.email === true,
+            'has-error': validatedFields.email === false
+          }">
+          <input type="email" name="email" placeholder="Email:" [(ngModel)]="feedback.email"
+                 (blur)="validateField('email')" data-constraints="@Email @NotEmpty">
+        </label>
+        <label class="grid_12"
+               [ngClass]="{
+            'is-valid': validatedFields.message === true,
+            'has-error': validatedFields.message === false
+          }">
+          <textarea name="message" placeholder="Message:" [(ngModel)]="feedback.message"
+                    (blur)="validateField('message')" data-constraints="@NotEmpty"></textarea>
+        </label>
+        <div class="mfControls grid_12">
+          <app-btn type="submit">Submit comment</app-btn>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

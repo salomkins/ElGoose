@@ -1,0 +1,76 @@
+:host {
+  display: block;
+  background-color: #eef;
+}
+
+.box-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 100px minmax(100px, 1fr);
+  margin-top: 20px;
+}
+
+::placeholder {
+  color: #f00;
+  opacity: 0.5;
+}
+
+.err {
+  &::placeholder {
+    opacity: 1;
+    transition: opacity 0.3s linear;
+  }
+}
+
+.box-radio {
+  display: inline-block;
+  margin-top: 25px;
+
+  input[type="radio"] {
+    margin-left: 20px;
+  }
+}
+//
+
+.btn-my {
+  $bc: #62bfe6;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  background: $bc;
+  margin: 20px 20px 20px 0;
+  border-radius: 3px;
+
+  &:hover {
+    background: darken($bc, 5%);
+  }
+
+  &:active {
+    background: darken($bc, 10%);
+  }
+  @media (max-width: 767px) {
+    display: block;
+    width: 80%;
+    margin: 20px auto 0;
+  }
+
+  &-red {
+    @extend .btn-my;
+    $bc: #f00;
+    background: $bc;
+
+    &:hover {
+      background: darken($bc, 5%);
+    }
+
+    &:active {
+      background: darken($bc, 10%);
+    }
+  }
+}

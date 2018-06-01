@@ -10,25 +10,20 @@ footer {
   background: #434547;
 }
 
-footer section + section .container {
+.container {
   border-top: 1px solid #888a8c;
 }
 
-footer .copyright {
+.copyright {
   padding-top: 21px;
   padding-bottom: 55px;
 }
 
-footer .copyright a:hover {
+.copyright a:hover {
   text-decoration: underline;
 }
 @media (max-width: 767px) {
-  footer .copyright {
+   .copyright {
     text-align: center;
   }
-}
-
-.well3 {
-  padding-top: 59px;
-  padding-bottom: 61px;
 }

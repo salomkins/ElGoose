@@ -6,10 +6,10 @@
     </div>
     <div class="box_cnt__no-flow">
 
-      <address *ngIf="tag == 'address'">
+      <address *ngIf="tag == 'address'" class={{effects}}>
         <ng-container *ngTemplateOutlet="content"></ng-container>
       </address>
-      <a href="{{link}}" *ngIf="tag == 'a'">
+      <a href="{{link}}" *ngIf="tag == 'a'" class={{effects}}>
         <ng-container *ngTemplateOutlet="content"></ng-container>
       </a>
       <ng-template #content>

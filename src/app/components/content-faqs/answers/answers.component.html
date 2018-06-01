@@ -35,7 +35,21 @@
     </ul>
     <hr>
     <p>Quisque placerat metus at neque aliquam sit amet iaculis lacus iaculis. Etiam ultrices condimentum justo eu viverra. Curabitur lacinia tristique imperdiet. Aenean bibendum vehicula diam nec placerat. Donec lectus leo, consequat sit amet viverra et, lacinia eu lectus! Nullam convallis; justo a vestibulum interdum, ipsum mauris lobortis urna, in fringilla elit erat at est. Nullam erat risus, volutpat quis porttitor eget, egestas n odio. Aliquam erat volutpat. Proin eu purus sapien, eu accumsan dolor. Nunc iaculis ligula eget massa dictum quis porttitor orci.<br/><br/>Elementum! In lobortis consectetur elit sed fringilla? Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla?</p>
-    <div class="btn_wr"><a href="#" class="btn2">Search all faqs</a></div>
-    <div class="btn_wr"><a href="#" class="btn2">Submit question form</a><a href="#" class="btn">Live chat for question</a></div>
+    <!-- <div class="btn_wr">
+      <a href="#" class="btn2">Search all faqs</a>
+    </div>
+    <div class="btn_wr">
+      <a href="#" class="btn2">Submit question form</a>
+      <a href="#" class="btn">Live chat for question</a>
+    </div> -->
+
+    <div>
+      <app-btn [btnStyle]="'btn2 btn_wr'" [link]="">Search all faqs</app-btn>
+    </div>
+    <div>
+      <app-btn [btnStyle]="'btn2 btn_wr'" [link]="">Submit question form</app-btn>
+      <app-btn [btnStyle]="'btn btn_wr'" [link]="">Live chat for question</app-btn>
+    </div>
+
   </div>
 </section>

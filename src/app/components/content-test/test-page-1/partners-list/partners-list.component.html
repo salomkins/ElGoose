@@ -1,0 +1,38 @@
+<div class="container">
+  <a routerLink="report" class="btn-my">Atskaite >></a>
+  <div class="row">
+    <div class="grid_3">
+      <h3>Partneru saraksts</h3>
+      <!-- <ul (mouseleave)="clearActiveItem()"> -->
+      <ng-container *ngIf="!myPartners">
+        <app-load-icon></app-load-icon>
+      </ng-container>
+      <div class="box-list">
+
+        <ul>
+          <li class="partners-item" *ngFor="let item of myPartners"
+          (mouseenter)="readActiveItem(item)"
+          (click)="readEditItem(item)"
+          [class.active]="item === activeItem && item != editItem"
+          [class.edit]="item === editItem">
+            <span>{{item.name}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <ng-container *ngIf="myPartners">
+      <div class="grid_4 box-content">
+        <app-decription caption="Apraksts" [item]="activeItem"></app-decription>
+      </div>
+
+      <div class="grid_4 box-content">
+        <app-edit caption="Labot sarakstu" [item]="editItem" [err]="err"
+        (onAddItem)="addItem($event)"
+        (onDeleteItem)="deleteItem($event)"
+        (onOkItem)="okItem($event)"
+        (onCancel)="cancel($event)"></app-edit>
+      </div>
+    </ng-container>
+  </div>
+</div>

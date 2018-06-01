@@ -1,0 +1,12 @@
+<strong *ngIf="!cakes.length">
+  Loading...
+</strong>
+
+<ng-container *ngIf="cakes.length">
+  <app-cake class="cake" *ngFor="let cake of cakes" [cake]="cake"></app-cake>
+  <p>
+    {{cakes.length}} cake(s) found
+  </p>
+</ng-container>
+
+

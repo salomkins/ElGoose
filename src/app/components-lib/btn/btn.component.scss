@@ -1,0 +1,65 @@
+:host {
+  display: inline-block;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.btn,
+.btn2 {
+  display: inline-block;
+  width: 150px;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  transition: 0.3s all ease;
+  margin-top: 32px;
+}
+
+.btn[type='submit'] {
+  margin-top: 0;
+  width: 100%;
+  font-size: 17px;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+}
+
+.btn2:hover,
+.btn:hover {
+  background: #4ab5e2;
+}
+
+.btn2:active,
+.btn:active {
+  background: #22a1d7;
+}
+
+.btn {
+  color: #fff;
+  background: #62bfe6;
+}
+
+.btn2 {
+  color: #62bfe6;
+  background: #eaeaea;
+}
+
+.btn2:active,
+.btn2:hover {
+  color: #fff;
+}
+
+.btn_wr {
+  width: auto;
+  padding: 16px 30px;
+  margin-right: 20px;
+  margin-top: 20px;
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
