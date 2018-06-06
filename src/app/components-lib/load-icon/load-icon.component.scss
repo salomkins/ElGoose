@@ -1,16 +1,16 @@
+@import 'variables';
 :host {
   display: block;
   width: 100%;
 }
-
 .loader {
   margin: 20px auto;
   opacity: .5;
-  border: 6px solid #62bfe6;;
+  border: ($loader-size / 5) solid #62bfe6;;
   border-radius: 50%;
-  border-top: 6px solid #3498db;
-  width: 30px;
-  height: 30px;
+  border-top: ($loader-size / 5) solid #3498db;
+  width: $loader-size;
+  height: $loader-size;
   animation: spin 1s linear infinite;
 }
 
