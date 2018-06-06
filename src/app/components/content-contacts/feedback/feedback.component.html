@@ -18,7 +18,7 @@
             'has-error': validatedFields.phone === false
           }">
           <input type="text" name="phone" placeholder="Telephone:" [(ngModel)]="feedback.phone"
-                 (blur)="validateField('phone')" data-constraints="@Phone">
+                 (input)="validateField('phone')" data-constraints="@Phone">
         </label>
         <label class="grid_4"
                [ngClass]="{

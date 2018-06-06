@@ -7,7 +7,7 @@ import { MapComponent } from './map/map.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FooterContactsModule } from '../../components-lib/footer-contacts/footer-contacts.module';
 import { BtnModule } from '../../components-lib/btn/btn.module';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
@@ -21,6 +21,7 @@ import {FormsModule} from "@angular/forms";
     ContentContactsComponent,
     MapComponent,
     FeedbackComponent,
+    ReactiveFormsModule,
   ]
 })
 export class ContentContactsModule { }
