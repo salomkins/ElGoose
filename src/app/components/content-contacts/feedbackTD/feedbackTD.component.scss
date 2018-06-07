@@ -140,9 +140,11 @@ label textarea {
   }
 }
 
-.is-valid {
+.is-valid,
+.ng-touched.ng-valid{
   border-bottom: 3px solid green;
 }
-.has-error {
+.has-error,
+.ng-touched.ng-invalid{
   border-bottom: 3px solid red;
 }
