@@ -7,7 +7,10 @@ import { MapComponent } from './map/map.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FooterContactsModule } from '../../components-lib/footer-contacts/footer-contacts.module';
 import { BtnModule } from '../../components-lib/btn/btn.module';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FeedbackTDComponent} from './feedbackTD/feedbackTD.component';
+import {FeedbackMDComponent} from './feedbackMD/feedbackMD.component';
+import {FeedbackReactiveComponent} from './feedbackReactive/feedbackReactive.component';
 
 @NgModule({
   imports: [
@@ -16,12 +19,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     FooterContactsModule,
     BtnModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     ContentContactsComponent,
     MapComponent,
     FeedbackComponent,
-    ReactiveFormsModule,
+    FeedbackTDComponent,
+    FeedbackMDComponent,
+    FeedbackReactiveComponent,
   ]
 })
 export class ContentContactsModule { }
