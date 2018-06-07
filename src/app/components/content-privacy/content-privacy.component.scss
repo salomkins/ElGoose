@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  background: #fff;
+}
+
+.well1 {
+  padding-top: 32px;
+  padding-bottom: 60px;
+}
+
+.container {
+  padding-bottom: 50px;
+}
+
+.primary {
+  color: #62bfe6;
+}
+
+p + a[href^="mailto:"] {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #62bfe6;
+}
+p + a[href^="mailto:"]:hover {
+  text-decoration: underline;
+}

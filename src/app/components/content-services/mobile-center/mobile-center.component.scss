@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.well1 {
+  padding-top: 32px;
+  padding-bottom: 60px;
+}
+
+.container {
+  padding-bottom: 50px;
+}
+
+.ins2 {
+  padding-bottom: 52px;
+}
+@media (max-width: 767px) {
+  .mobile-center {
+    text-align: center;
+  }
+}

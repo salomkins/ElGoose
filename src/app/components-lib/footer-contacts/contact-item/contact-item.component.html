@@ -1,0 +1,22 @@
+<div class="contact-item">
+
+  <div class="box">
+    <div class="box_aside">
+      <div class="icon2 fa {{iconName}}"></div>
+    </div>
+    <div class="box_cnt__no-flow">
+
+      <address *ngIf="tag == 'address'" class={{effects}}>
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+      </address>
+      <a href="{{link}}" *ngIf="tag == 'a'" class={{effects}}>
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+      </a>
+      <ng-template #content>
+        <ng-content></ng-content>
+      </ng-template>
+
+    </div>
+  </div>
+
+</div>

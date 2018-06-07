@@ -1,0 +1,24 @@
+<table class="cake-table">
+  <tbody>
+    <tr>
+      <th>ID</th>
+      <td>{{cake.id}}</td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td>{{cake.name}}</td>
+    </tr>
+    <tr>
+      <th>Weight</th>
+      <td>{{cake.weight}} kg</td>
+    </tr>
+    <tr>
+      <th>Expires:</th>
+      <td>{{cake.expires | date:"dd.MM.yyyy"}}</td>
+    </tr>
+    <tr *ngIf="cake.price">
+      <th>Price:</th>
+      <td>{{cake.price}}</td>
+    </tr>
+  </tbody>
+</table>
