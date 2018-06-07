@@ -4,17 +4,34 @@
     <form #formRef="ngForm" class="mailform off2" novalidate>
       <input type="hidden" name="form-type" value="contact">
       <fieldset class="row">
-        <label class="grid_4">
-          <input type="text" name="name" placeholder="Your Name:" [(ngModel)]="name" required>
+        <label class="grid_4 control">
+          <input type="text" name="name" placeholder="Your Name:" [(ngModel)]="name" #nameRef="ngModel" required>
+          <span class="errors" *ngIf="nameRef?.touched && nameRef.invalid">
+            <span class="error" *ngIf="nameRef?.errors?.required">Field is required</span>
+          </span>
         </label>
-        <label class="grid_4">
-          <input type="text" name="phone" placeholder="Telephone:" [(ngModel)]="phone" pattern="^\+{0,1}\d+">
+        <label class="grid_4 control">
+          <input type="text" name="phone" placeholder="Telephone:" [(ngModel)]="phone" #phoneRef="ngModel"
+                 pattern="^\+{0,1}\d+">
+          <span class="errors" *ngIf="phoneRef?.touched && phoneRef?.invalid">
+            <span class="error" *ngIf="phoneRef?.errors?.required">Field is required</span>
+            <span class="error" *ngIf="phoneRef?.errors?.pattern">Only numbers allowed</span>
+          </span>
         </label>
-        <label class="grid_4">
-          <input type="email" name="email" placeholder="Email:" [(ngModel)]="email" required email>
+        <label class="grid_4 control">
+          <input type="email" name="email" placeholder="Email:" [(ngModel)]="email" #emailRef="ngModel" required email>
+          <span class="errors" *ngIf="emailRef?.touched && emailRef?.invalid">
+            <span class="error" *ngIf="emailRef?.errors?.required">Email is required</span>
+            <span class="error" *ngIf="emailRef?.errors?.email">Email format is incorrect</span>
+          </span>
         </label>
-        <label class="grid_12">
-          <textarea name="message" placeholder="Message:" [(ngModel)]="message" required minlength="20"></textarea>
+        <label class="grid_12 control">
+          <textarea name="message" placeholder="Message:" [(ngModel)]="message" #mesageRef="ngModel" required
+                    minlength="20"></textarea>
+          <span class="errors" *ngIf="mesageRef?.touched && mesageRef?.invalid">
+            <span class="error" *ngIf="mesageRef?.errors?.required">Message is required</span>
+            <span class="error" *ngIf="mesageRef?.errors?.minLength">Message should be more than 20 chars</span>
+          </span>
         </label>
         <div class="mfControls grid_12">
           <app-btn type="submit" [disabled]="!formRef.valid">Submit comment</app-btn>
