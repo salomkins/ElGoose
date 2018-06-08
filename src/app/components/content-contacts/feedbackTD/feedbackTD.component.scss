@@ -141,12 +141,18 @@ label textarea {
 }
 
 .is-valid,
-.ng-touched.ng-valid{
-  border-bottom: 3px solid green;
+input,
+textarea {
+  &.ng-touched.ng-valid{
+    border-bottom: 3px solid green;
+  }
 }
 .has-error,
-.ng-touched.ng-invalid{
-  border-bottom: 3px solid red;
+input,
+textarea {
+  &.ng-touched.ng-invalid{
+    border-bottom: 3px solid red;
+  }
 }
 .control {
   position: relative;
