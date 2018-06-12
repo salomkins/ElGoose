@@ -1,22 +1,41 @@
 <section class="well1">
   <div class="container">
     <h2>Feedback</h2>
-    <form action="bat/rd-mailform.php" class="mailform off2" novalidate>
+    <form [formGroup]="feedbackForm" class="mailform off2" novalidate>
       <input type="hidden" name="form-type" value="contact">
       <fieldset class="row">
         <label class="grid_4">
           <input type="text" name="name" placeholder="Your Name:"
-                 data-constraints="@LettersOnly @NotEmpty">
+                 [formControlName]="'name'">
+          <span class="errors" *ngIf="feedbackForm.controls.name.touched && feedbackForm.controls.name.invalid">
+            <span class="error" *ngIf="feedbackForm.controls.name.errors?.required">Field is required</span>
+            <span class="error" *ngIf="feedbackForm.controls.name.errors?.forbiddenName">{{feedbackForm.controls.name.value}} shall not pass</span>
+          </span>
         </label>
         <label class="grid_4">
-          <input type="text" name="phone" placeholder="Telephone:"  data-constraints="@Phone">
+          <input type="text" name="phone" placeholder="Telephone:"
+                 [formControl]="phoneControl">
+          <span class="errors" *ngIf="phoneControl.touched && phoneControl.invalid">
+            <span class="error" *ngIf="phoneControl.errors?.required">Field is required</span>
+            <span class="error" *ngIf="phoneControl.errors?.pattern">Only numbers allowed</span>
+            <span class="error" *ngIf="phoneControl.errors?.forbiddenName">Phone can't be {{phoneControl.value}}</span>
+          </span>
         </label>
         <label class="grid_4">
           <input type="email" name="email" placeholder="Email:"
-                 data-constraints="@Email @NotEmpty">
+                 [formControlName]="'email'">
+          <span class="errors" *ngIf="feedbackForm.controls.email.touched && feedbackForm.controls.email.invalid">
+            <span class="error" *ngIf="feedbackForm.controls.email.errors?.required">Email is required</span>
+            <span class="error" *ngIf="feedbackForm.controls.email.errors?.email">Email format is incorrect</span>
+          </span>
         </label>
         <label class="grid_12">
-          <textarea name="message" placeholder="Message:" data-constraints="@NotEmpty"></textarea>
+          <textarea name="message" placeholder="Message:"
+                    [formControlName]="'message'"></textarea>
+          <span class="errors" *ngIf="feedbackForm.controls.message.touched && feedbackForm.controls.message?.invalid">
+            <span class="error" *ngIf="feedbackForm.controls.message.errors?.required">Message is required</span>
+            <span class="error" *ngIf="feedbackForm.controls.message.errors?.minlength">Message should be more than 20 chars</span>
+          </span>
         </label>
         <div class="mfControls grid_12">
           <app-btn type="submit">Submit comment</app-btn>
