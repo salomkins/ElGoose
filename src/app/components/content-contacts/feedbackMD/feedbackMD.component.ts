@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {filter, map, tap} from 'rxjs/operators';
 import {FeedbackType} from '../feedback/feedback.type';
@@ -7,7 +7,8 @@ import {forbiddenNameValidator} from '../feedbackTD/forbidden-name.directive';
 @Component({
   selector: 'app-feedback-md',
   templateUrl: './feedbackMD.component.html',
-  styleUrls: ['./feedbackMD.component.scss']
+  styleUrls: ['./feedbackMD.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FeedbackMDComponent implements OnInit {
   feedbackForm: FormGroup;
@@ -18,6 +19,7 @@ export class FeedbackMDComponent implements OnInit {
       forbiddenNameValidator(['02', '03', '112'])
     ]
   );
+  submitDisabled = true;
   private _feedback: FeedbackType;
 
   constructor(private formBuilder: FormBuilder) {
@@ -59,8 +61,11 @@ export class FeedbackMDComponent implements OnInit {
       }),
       tap(formFeedback => {
         this.feedback = formFeedback;
+        this.submitDisabled = false;
       })
-    ).subscribe();
+    ).subscribe(subscribeData => {
+      console.log('subscribeData', subscribeData);
+    });
   }
 
   private get feedback(): FeedbackType {

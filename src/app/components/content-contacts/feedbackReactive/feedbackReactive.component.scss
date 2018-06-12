@@ -140,9 +140,40 @@ label textarea {
   }
 }
 
-.is-valid {
-  border-bottom: 3px solid green;
+.is-valid,
+input,
+textarea {
+  &.ng-touched.ng-valid{
+    border-bottom: 3px solid green;
+  }
 }
-.has-error {
-  border-bottom: 3px solid red;
+.has-error,
+input,
+textarea {
+  &.ng-touched.ng-invalid{
+    border-bottom: 3px solid red;
+  }
+}
+.control {
+  position: relative;
+}
+
+.errors {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  max-width: 100%;
+  line-height: 1.1;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: .5em;
+  z-index: 1000;
+  pointer-events: none;
+  background: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+}
+.error {
+  display: block;
+  margin-bottom: .5em;
 }
