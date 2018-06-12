@@ -1,0 +1,12 @@
+<label>
+  <input type={{type}} name={{name}} placeholder={{placeholder}} [(ngModel)]="valueTD" #inputRef="ngModel"
+         required = "{{valid.required}}"
+         email = "{{valid.email}}"
+         pattern="{{pattern}}"
+  >
+  <span class="errors" *ngIf="inputRef?.touched && inputRef?.invalid">
+    <span class="error" *ngIf="inputRef?.errors?.required">Obligāti jānorāda vērtība</span>
+    <span class="error" *ngIf="inputRef?.errors?.email">Neatbilst e-pasta formāts</span>
+    <span class="error" *ngIf="inputRef?.errors?.pattern">Neatbilst datu formāts</span>
+  </span>
+</label>

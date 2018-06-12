@@ -12,6 +12,7 @@ import {FeedbackTDComponent} from './feedbackTD/feedbackTD.component';
 import {FeedbackMDComponent} from './feedbackMD/feedbackMD.component';
 import {FeedbackReactiveComponent} from './feedbackReactive/feedbackReactive.component';
 import {ForbiddenValidatorDirective} from './feedbackTD/forbidden-name.directive';
+import {InputTdModule} from '../../components-lib/input-td/input-td.module';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import {ForbiddenValidatorDirective} from './feedbackTD/forbidden-name.directive
     BtnModule,
     FormsModule,
     ReactiveFormsModule,
+    InputTdModule,
   ],
   declarations: [
     ContentContactsComponent,

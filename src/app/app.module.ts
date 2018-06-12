@@ -34,6 +34,7 @@ import { BtnModule } from './components-lib/btn/btn.module';
 import { PopcornService } from "./components-lib/popcorn/popcorn.service";
 import { LoadIconModule } from './components-lib/load-icon/load-icon.module';
 import {FormsModule} from "@angular/forms";
+import { InputTdModule } from './components-lib/input-td/input-td.module';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import {FormsModule} from "@angular/forms";
     ProductListModule,
     BtnModule,
     LoadIconModule,
+    InputTdModule,
   ],
   providers: [mf],
   bootstrap: [AppComponent]

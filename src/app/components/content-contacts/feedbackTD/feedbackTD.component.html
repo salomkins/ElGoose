@@ -3,6 +3,22 @@
     <h2>Feedback</h2>
     <form #formRef="ngForm" class="mailform off2" novalidate>
       <input type="hidden" name="form-type" value="contact">
+
+
+      <fieldset class="row">
+        <div class="grid_4">
+          <app-input-td [name]="'phone'" [placeholder]="'Telefons:'" [valueTD]="'+371 22334455'"
+            [valid]="{
+              required : false,
+              email: false,
+              phone: true
+            }"
+          >
+          </app-input-td>
+        </div>
+      </fieldset>
+
+
       <fieldset class="row">
         <label class="grid_4 control">
           <input type="text" name="name" placeholder="Your Name:"
