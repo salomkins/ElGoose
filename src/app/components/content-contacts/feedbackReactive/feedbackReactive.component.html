@@ -1,22 +1,25 @@
 <section class="well1">
   <div class="container">
     <h2>Feedback</h2>
-    <form action="bat/rd-mailform.php" class="mailform off2" novalidate>
-      <input type="hidden" name="form-type" value="contact">
+    <form [formGroup]="feedbackForm" class="mailform off2" novalidate>
       <fieldset class="row">
         <label class="grid_4">
           <input type="text" name="name" placeholder="Your Name:"
-                 data-constraints="@LettersOnly @NotEmpty">
+            [formControlName]="'name'"
+          >
+          <span class="errors" *ngIf="nameControl.touched && nameControl.invalid">
+            <span class="error" *ngIf="nameControl.errors?.required">Field is required</span>
+            <span class="error" *ngIf="nameControl.errors?.forbiddenName">{{nameControl.value}} shall not pass</span>
+          </span>
         </label>
         <label class="grid_4">
-          <input type="text" name="phone" placeholder="Telephone:"  data-constraints="@Phone">
+          <input type="text" name="phone" placeholder="Telephone:">
         </label>
         <label class="grid_4">
-          <input type="email" name="email" placeholder="Email:"
-                 data-constraints="@Email @NotEmpty">
+          <input type="email" name="email" placeholder="Email:">
         </label>
         <label class="grid_12">
-          <textarea name="message" placeholder="Message:" data-constraints="@NotEmpty"></textarea>
+          <textarea name="message" placeholder="Message:"></textarea>
         </label>
         <div class="mfControls grid_12">
           <app-btn type="submit">Submit comment</app-btn>
