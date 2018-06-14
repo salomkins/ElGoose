@@ -34,6 +34,9 @@ import { BtnModule } from './components-lib/btn/btn.module';
 import { PopcornService } from "./components-lib/popcorn/popcorn.service";
 import { LoadIconModule } from './components-lib/load-icon/load-icon.module';
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import { PeopleComponent } from './components/content-about/people/people.component';
+import {PeopleService} from "./components/content-about/people/people.service";
 
 
 @NgModule({
@@ -61,6 +64,7 @@ import {FormsModule} from "@angular/forms";
     SupportComponent,
     AdditionalInfoComponent,
     NotFoundComponent,
+    PeopleComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,8 +74,9 @@ import {FormsModule} from "@angular/forms";
     ProductListModule,
     BtnModule,
     LoadIconModule,
+    HttpClientModule,
   ],
-  providers: [mf],
+  providers: [mf, PeopleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
