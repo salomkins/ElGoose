@@ -1,8 +1,9 @@
 <label>
-  <input type={{type}} name={{name}} placeholder={{placeholder}} [(ngModel)]="valueTD" #inputRef="ngModel"
-         required = "{{valid.required}}"
-         email = "{{valid.email}}"
-         pattern="{{pattern}}"
+  <input [type]="type" [name]="name" [placeholder]="placeholder" [(ngModel)]="valueTD" #inputRef="ngModel"
+         [required] = "valid.required"
+         [email] = "valid.email"
+         [pattern]="pattern"
+         (input)="changeValue()"
   >
   <span class="errors" *ngIf="inputRef?.touched && inputRef?.invalid">
     <span class="error" *ngIf="inputRef?.errors?.required">Obligāti jānorāda vērtība</span>

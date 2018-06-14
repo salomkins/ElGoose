@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 export class v {
-  required: boolean;
-  email: boolean;
-  phone: boolean;
+  required?: boolean;
+  email?: boolean;
+  phone?: boolean;
 }
 
 @Component({
@@ -32,11 +32,14 @@ export class InputTdComponent implements OnInit {
 
   ngOnInit() {
     if (this._valid.phone) {
-      const re = /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/;
-      this._pattern = re.toString();
-      //this._pattern = "^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$";
+      this._pattern = "^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$";
     }
+    this.changeValue();
   }
+
+ private changeValue() {
+   this.onChangeValue.emit(this._valueTD);
+ }
 
   @Input('valid')
   set valid(value: v) {
@@ -84,4 +87,7 @@ export class InputTdComponent implements OnInit {
   get pattern(): string {
     return this._pattern;
   }
+
+  @Output() onChangeValue = new EventEmitter<string>();
+
 }

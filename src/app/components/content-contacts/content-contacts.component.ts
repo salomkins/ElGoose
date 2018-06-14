@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-contacts.component.scss']
 })
 export class ContentContactsComponent implements OnInit {
-  public formType = 'md';
+  public formType = 'td';
   constructor() { }
 
   ngOnInit() {

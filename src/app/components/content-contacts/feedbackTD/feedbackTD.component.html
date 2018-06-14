@@ -7,14 +7,14 @@
 
       <fieldset class="row">
         <div class="grid_4">
-          <app-input-td [name]="'phone'" [placeholder]="'Telefons:'" [valueTD]="'+371 22334455'"
-            [valid]="{
-              required : false,
-              email: false,
-              phone: true
-            }"
-          >
+          <app-input-td [name]="'phone'" [placeholder]="'Mājas telefons:'" [valueTD]="'+371 67334455'"
+            [valid]="{phone: true}" (onChangeValue)="homePhone=$event">
           </app-input-td>
+        </div>
+        <div class="grid_4">
+        </div>
+        <div class="grid_4">
+          Ievadītā vērtība: {{homePhone}}
         </div>
       </fieldset>
 
