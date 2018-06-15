@@ -1,0 +1,11 @@
+<section class="well1">
+  <div class="container">
+    <div class="row">
+      <div class="grid_4" *ngFor="let person of people">
+        <h2>{{person.name}}</h2>
+        <p>{{person.birthYear}}</p>
+      </div>
+    </div>
+    <button type="button" (click)="loadMore()">load more</button>
+  </div>
+</section>
