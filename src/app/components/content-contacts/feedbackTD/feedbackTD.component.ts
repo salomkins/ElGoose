@@ -14,7 +14,7 @@ export class FeedbackTDComponent implements OnInit {
   public email = 'vasilij.zhkov@gmail.com';
   public message = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto blanditiis debitis et id, nulla qui temporibus! Ad assumenda cupiditate doloremque eveniet expedita facilis inventore molestiae quae ratione? Quia, suscipit. ';
 
-  private homePhone: string;
+  homePhone: string;
 
   ngOnInit() {
   }

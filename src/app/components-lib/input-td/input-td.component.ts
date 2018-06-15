@@ -37,7 +37,7 @@ export class InputTdComponent implements OnInit {
     this.changeValue();
   }
 
- private changeValue() {
+ changeValue() {
    this.onChangeValue.emit(this._valueTD);
  }
 
