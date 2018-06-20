@@ -7,7 +7,6 @@
 
 .btn,
 .btn2 {
-  display: inline-block;
   width: 150px;
   padding: 16px;
   font-size: 16px;
@@ -20,7 +19,8 @@
   margin-top: 32px;
 }
 
-.btn[type='submit'] {
+.btn[type='submit'],
+.btn[type='button'] {
   margin-top: 0;
   width: 100%;
   font-size: 17px;
@@ -41,6 +41,7 @@
 .btn2:disabled,
 .btn:disabled {
   background: #777;
+  opacity: .5;
 }
 
 .btn {

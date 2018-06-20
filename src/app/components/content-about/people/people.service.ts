@@ -19,20 +19,22 @@ export class PeopleService {
     return this.httpClient.get<any>(requestUrl).pipe(
       tap(response => {
         this.nextPage = response.next;
+        //console.log(response)
       }),
       map(response => {
+        //this.nextPage = response.next;
         const people = response.results.map(apiPerson => {
           const ourPerson = new PersonType();
           ourPerson.name = apiPerson.name;
           ourPerson.birthYear = apiPerson.birth_year;
           return ourPerson;
         });
-        return people || [];
+        return [people || [], this.nextPage];
       }),
     );
   }
 
   getNextPage() {
-    return this.getPeople();
+      return this.getPeople();
   }
 }

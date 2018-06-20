@@ -6,6 +6,9 @@
         <p>{{person.birthYear}}</p>
       </div>
     </div>
-    <button type="button" (click)="loadMore()">load more</button>
+    <ng-container *ngIf="loading">
+      <app-load-icon></app-load-icon>
+    </ng-container>
+    <app-btn type="button" [disabled]="!nextPage" (click)="loadMore()">load more</app-btn>
   </div>
 </section>

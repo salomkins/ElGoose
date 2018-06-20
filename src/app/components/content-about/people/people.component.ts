@@ -11,6 +11,8 @@ import {Subscription} from "rxjs/Subscription";
 })
 export class PeopleComponent implements OnInit, OnDestroy {
   people: PersonType[] = [];
+  loading = false;
+  nextPage = null;
   private getPeopleSubscription: Subscription;
   private getMoreSubscription: Subscription;
 
@@ -19,8 +21,11 @@ export class PeopleComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.loading = true;
     this.getPeopleSubscription = this.peopleService.getPeople().subscribe(responseData => {
-      this.people = responseData;
+      this.people = responseData[0];
+      this.nextPage = responseData[1];
+      this.loading = false;
       this.changeDetector.detectChanges();
     });
   }
@@ -31,9 +36,12 @@ export class PeopleComponent implements OnInit, OnDestroy {
   }
 
   loadMore() {
+    this.loading = true;
     this.unsubscribeGetMore();
     this.getMoreSubscription = this.peopleService.getNextPage().subscribe(responseData => {
-      this.people = this.people.concat(responseData);
+      this.people = this.people.concat(responseData[0]);
+      this.nextPage = responseData[1];
+      this.loading = false;
       this.changeDetector.detectChanges();
     });
   }

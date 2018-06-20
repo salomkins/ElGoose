@@ -3,7 +3,7 @@
 </a>
 
 
-<button *ngIf="type === 'submit'" class="{{btnStyle}}" type={{type}} [disabled]="isDisabled">
+<button *ngIf="type === 'submit' || type === 'button'" class="{{btnStyle}}" type={{type}} [disabled]="isDisabled">
   <ng-container *ngTemplateOutlet="content"></ng-container>
 </button>
 

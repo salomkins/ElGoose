@@ -74,7 +74,8 @@ import {PeopleService} from "./components/content-about/people/people.service";
     ProductListModule,
     BtnModule,
     LoadIconModule,
-  ],
+    HttpClientModule, 
+ ],
   providers: [mf, PeopleService],
   bootstrap: [AppComponent]
 })
