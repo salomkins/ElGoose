@@ -24,17 +24,17 @@
         <label class="grid_4">
           <input type="email" name="email" placeholder="Email:"
                  [formControlName]="'email'">
-          <span class="errors" *ngIf="feedbackForm.controls.email.touched && feedbackForm.controls.email.invalid">
-            <span class="error" *ngIf="feedbackForm.controls.email.errors?.required">Email is required</span>
-            <span class="error" *ngIf="feedbackForm.controls.email.errors?.email">Email format is incorrect</span>
+          <span class="errors" *ngIf="feedbackForm.get('email').touched && feedbackForm.controls.email.invalid">
+            <span class="error" *ngIf="feedbackForm.get('email').errors?.required">Email is required</span>
+            <span class="error" *ngIf="feedbackForm.get('email').errors?.email">Email format is incorrect</span>
           </span>
         </label>
         <label class="grid_12">
           <textarea name="message" placeholder="Message:"
                     [formControlName]="'message'"></textarea>
-          <span class="errors" *ngIf="feedbackForm.controls.message.touched && feedbackForm.controls.message?.invalid">
-            <span class="error" *ngIf="feedbackForm.controls.message.errors?.required">Message is required</span>
-            <span class="error" *ngIf="feedbackForm.controls.message.errors?.minlength">Message should be more than 20 chars</span>
+          <span class="errors" *ngIf="feedbackForm.get('message').touched && feedbackForm.controls.message?.invalid">
+            <span class="error" *ngIf="feedbackForm.get('message').errors?.required">Message is required</span>
+            <span class="error" *ngIf="feedbackForm.get('message').errors?.minlength">Message should be more than 20 chars</span>
           </span>
         </label>
         <div class="mfControls grid_12">
