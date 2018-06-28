@@ -11,6 +11,7 @@ import {Subscription} from "rxjs/Subscription";
 })
 export class PeopleComponent implements OnInit, OnDestroy {
   people: PersonType[] = [];
+  errorMessage = '';
   private getPeopleSubscription: Subscription;
   private getMoreSubscription: Subscription;
 
@@ -19,10 +20,19 @@ export class PeopleComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.getPeopleSubscription = this.peopleService.getPeople().subscribe(responseData => {
-      this.people = responseData;
-      this.changeDetector.detectChanges();
-    });
+    this.getPeopleSubscription = this.peopleService.getPeople().subscribe(
+      responseData => {
+        this.people = responseData;
+        this.changeDetector.detectChanges();
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = 'Fatal Error!';
+        this.changeDetector.detectChanges();
+      },
+      () => {
+        console.log('!!!!all done');
+      });
   }
 
   ngOnDestroy() {

@@ -6,6 +6,7 @@
         <p>{{person.birthYear}}</p>
       </div>
     </div>
-    <button type="button" (click)="loadMore()">load more</button>
+    <button *ngIf="!errorMessage" type="button" (click)="loadMore()">load more</button>
+    <div *ngIf="errorMessage">{{errorMessage}}</div>
   </div>
 </section>
