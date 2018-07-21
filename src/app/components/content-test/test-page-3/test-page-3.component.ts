@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import {CakeType} from "./cake/cake.type";
+import {CakeType} from './cake/cake.type';
 import {CakeService} from "./cake/cake.service";
 import {Subscription} from "rxjs/Subscription";
 

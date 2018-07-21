@@ -37,6 +37,8 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { PeopleComponent } from './components/content-about/people/people.component';
 import {PeopleService} from "./components/content-about/people/people.service";
+import {ImgSlideComponent} from "./components-lib/img-slider/img-slide.component";
+import {ImgSliderModule} from "./components-lib/img-slider/img-slider.module";
 
 
 @NgModule({
@@ -75,6 +77,7 @@ import {PeopleService} from "./components/content-about/people/people.service";
     BtnModule,
     LoadIconModule,
     HttpClientModule,
+    ImgSliderModule,
   ],
   providers: [mf, PeopleService],
   bootstrap: [AppComponent]
