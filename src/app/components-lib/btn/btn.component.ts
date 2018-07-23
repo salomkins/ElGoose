@@ -6,10 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./btn.component.scss']
 })
 export class BtnComponent implements OnInit {
-
   private _btnStyle = 'btn';
   private _type = '';
   private _link = '';
+  private _isDisabled = false;
 
   constructor() { }
 
@@ -38,6 +38,15 @@ export class BtnComponent implements OnInit {
   }
   get link(): string {
     return this._link;
+  }
+
+  get isDisabled(): boolean {
+    return this._isDisabled;
+  }
+
+  @Input('disabled')
+  set isDisabled(value: boolean) {
+    this._isDisabled = value;
   }
 
 }

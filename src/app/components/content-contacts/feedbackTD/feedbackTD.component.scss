@@ -1,0 +1,179 @@
+:host {
+  display: block;
+}
+
+.well1 {
+  padding-top: 32px;
+  padding-bottom: 60px;
+}
+
+.container {
+  padding-bottom: 50px;
+}
+
+/*========================================================
+Contact Form
+=========================================================*/
+/* MF
+========================================================*/
+
+.mailform {
+  position: relative;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+fieldset {
+  border: none;
+  margin-top: 15px;
+}
+
+.mailform * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+label {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 0;
+}
+
+label:first-child {
+  margin-top: 0;
+}
+
+label input,
+label select,
+label textarea {
+  display: block;
+  width: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding: 14px 18px;
+  line-height: 26px;
+  color: #878787;
+  background: #f5f5f5;
+  border: none;
+}
+
+label input:-moz-placeholder,
+label select:-moz-placeholder,
+label textarea:-moz-placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+label input::-webkit-input-placeholder,
+label select::-webkit-input-placeholder,
+label textarea::-webkit-input-placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+label input::-moz-placeholder,
+label select::-moz-placeholder,
+label textarea::-moz-placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+label input:-ms-input-placeholder,
+label select:-ms-input-placeholder,
+label textarea:-ms-input-placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+label.grid_12 {
+  margin-top: 30px;
+}
+
+label textarea {
+  resize: vertical;
+  overflow: auto;
+  height: 430px;
+}
+@media (max-width: 767px) {
+  label textarea {
+    height: 320px;
+  }
+}
+/* MF Input
+========================================================*/
+
+.mfInput input:-webkit-autofill ~ .mfIcon span:before,
+.mfInput textarea:-webkit-autofill ~ .mfIcon span:before {
+  color: #2D2D2D;
+}
+/* MF Controls
+========================================================*/
+
+.mfControls {
+  margin-top: 40px;
+  word-spacing: 10px;
+  text-align: left;
+}
+
+.mfControls > * {
+  word-spacing: normal;
+  margin-bottom: 5px;
+  min-width: 200px;
+  width: auto;
+  font-family: inherit;
+  font-size: 17px;
+  letter-spacing: -0.5px;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  transition: .3s all ease;
+}
+@media (max-width: 767px) {
+  .mfControls > * {
+    width: 100%;
+  }
+}
+
+.is-valid,
+input,
+textarea {
+  &.ng-touched.ng-valid{
+    border-bottom: 3px solid green;
+  }
+}
+.has-error,
+input,
+textarea {
+  &.ng-touched.ng-invalid{
+    border-bottom: 3px solid red;
+  }
+}
+.control {
+  position: relative;
+}
+
+.errors {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  max-width: 100%;
+  line-height: 1.1;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: .5em;
+  z-index: 1000;
+  pointer-events: none;
+  background: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+}
+.error {
+  display: block;
+  margin-bottom: .5em;
+}

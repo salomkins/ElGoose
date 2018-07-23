@@ -38,6 +38,11 @@
   background: #22a1d7;
 }
 
+.btn2:disabled,
+.btn:disabled {
+  background: #777;
+}
+
 .btn {
   color: #fff;
   background: #62bfe6;

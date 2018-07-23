@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow {
+  padding: .5em 1em;
+  font-size: 1.2em;
+  border: 1px solid #eeeeff;
+  margin: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
