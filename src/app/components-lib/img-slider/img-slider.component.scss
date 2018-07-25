@@ -2,9 +2,29 @@
   display: block;
 }
 
+
+.slider {
+  position: relative;
+  height: 400px;
+  //background-color: red;
+}
+
+.slides {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.active{
+  opacity: 1;
+  transition: opacity 1s;
+}
 .controls {
+  position: absolute;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .arrow {

@@ -1,5 +1,12 @@
-<app-img-slide *ngFor="let slide of slides" [slide]="slide" [isActive]="slide === activeSlide"></app-img-slide>
+<div class="slider">
+<app-img-slide *ngFor="let slide of slides"
+[slide]="slide"
+[isActive]="slide === activeSlide"
+[class.active]="slide === activeSlide"
+class="slides">
+</app-img-slide>
 <div class="controls">
   <div class="arrow prev" (click)="setSlideActive(prevSlide)">prev</div>
   <div class="arrow next" (click)="setSlideActive(nextSlide)">next</div>
+</div>
 </div>

@@ -2,26 +2,25 @@
   display: block;
 }
 
-.slide {
-  padding: 1em;
-  background: #eeeeff;
-  border-radius: 5px;
-  margin: 1em;
-  &.is-active {
-    background-color: #bada55;
-  }
-}
+// .slide {
+//   padding: 1em;
+//   background: #eeeeff;
+//   border-radius: 5px;
+//   margin: 1em;
+//   &.is-active {
+//     background-color: #bada55;
+//   }
+// }
 
 figure {
-  display: block;
   position: relative;
   height: 400px;
 }
 
 img {
-  height: 100%;
   width: auto;
   margin: 0 auto;
+  height: 100%;
 }
 
 figcaption {
@@ -33,7 +32,7 @@ figcaption {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 56px;
-  line-height: 1.2;
+  line-height: 1.4;
   color: #3498db;
   opacity: .7;
   @media (max-width: 767px) {
