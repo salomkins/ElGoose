@@ -37,7 +37,8 @@ import {FormsModule} from "@angular/forms";
 import { InputTdModule } from './components-lib/input-td/input-td.module';
 import {HttpClientModule} from "@angular/common/http";
 import { PeopleComponent } from './components/content-about/people/people.component';
-import {PeopleService} from "./components/content-about/people/people.service";
+import { PeopleService } from "./components/content-about/people/people.service";
+import { ImgSliderModule } from './components-lib/img-slider/img-slider.module';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import {PeopleService} from "./components/content-about/people/people.service";
     ProductListModule,
     BtnModule,
     LoadIconModule,
-    HttpClientModule, 
+    HttpClientModule,
+    ImgSliderModule,
  ],
   providers: [mf, PeopleService],
   bootstrap: [AppComponent]

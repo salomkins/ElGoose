@@ -1,0 +1,9 @@
+<div class="slide" [class.is-active]="isActive">
+  <figure>
+    <img src="{{slide.src}}" alt="">
+    <figcaption>{{slide.title}}</figcaption>
+  </figure>
+  <div *ngIf="slide.text" class="description">
+    {{slide.text}}
+  </div>
+</div>
