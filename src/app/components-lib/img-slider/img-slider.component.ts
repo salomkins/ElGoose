@@ -1,21 +1,36 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {ImgSlide} from './img.slide';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ImgSlide } from './img.slide';
 
 
 @Component({
   selector: 'app-img-slider',
   templateUrl: './img-slider.component.html',
   styleUrls: ['./img-slider.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  //changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ImgSliderComponent implements OnInit {
   private _slides: ImgSlide[] = [];
   private _activeSlide: ImgSlide = null;
+  private _xxx: string = 'default value';
 
-  constructor() {
+  constructor(private changeDetector: ChangeDetectorRef) {
   }
 
   ngOnInit() {
+    setInterval(() => {
+      this.setSlideActive(this.nextSlide);
+      this.changeDetector.detectChanges();
+    }, 5000);
+  }
+
+
+  get xxx(): string {
+    return this._xxx;
+  }
+
+  @Input('xxx')
+  set xxx(value: string) {
+    this._xxx = value;
   }
 
   get slides(): ImgSlide[] {
