@@ -6,31 +6,33 @@ import { ImgSlide } from './img.slide';
   selector: 'app-img-slider',
   templateUrl: './img-slider.component.html',
   styleUrls: ['./img-slider.component.scss'],
-  //changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ImgSliderComponent implements OnInit {
   private _slides: ImgSlide[] = [];
   private _activeSlide: ImgSlide = null;
-  private _xxx: string = 'default value';
+  private _autoChangeSeconds: string | number = 0;
 
   constructor(private changeDetector: ChangeDetectorRef) {
   }
 
   ngOnInit() {
-    setInterval(() => {
-      this.setSlideActive(this.nextSlide);
-      this.changeDetector.detectChanges();
-    }, 5000);
+    if (+this.autoChangeSeconds >= 1) {
+      setInterval(() => {
+        this.setSlideActive(this.nextSlide);
+        this.changeDetector.detectChanges();
+      }, +this.autoChangeSeconds * 1000);
+    }
   }
 
 
-  get xxx(): string {
-    return this._xxx;
+  get autoChangeSeconds(): string | number {
+    return this._autoChangeSeconds;
   }
 
-  @Input('xxx')
-  set xxx(value: string) {
-    this._xxx = value;
+  @Input('autoChangeSeconds')
+  set autoChangeSeconds(value: string | number) {
+    this._autoChangeSeconds = value;
   }
 
   get slides(): ImgSlide[] {

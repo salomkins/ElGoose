@@ -6,17 +6,16 @@
 .slider {
   position: relative;
   height: 400px;
-  //background-color: red;
 }
 
 .slides {
   position: absolute;
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity .8s;
 }
 .active{
   opacity: 1;
-  transition: opacity 1s;
+  transition: opacity .8s;
 }
 .controls {
   position: absolute;
