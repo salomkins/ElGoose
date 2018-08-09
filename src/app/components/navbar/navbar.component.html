@@ -8,10 +8,10 @@
           <li *ngFor="let item of navItems" [class.sf-hover]="item===hoverItem"
           routerLinkActive="sf-active" [routerLinkActiveOptions]="{exact: false}"
           (mouseenter)="hoverItem = item" (mouseleave)="hoverItem = null">
-            <a routerLink="{{item.link}}" (click)="activeItem=item">{{item.name}}</a>
+            <a routerLink="{{item.link}}" [fragment]="item.fragment ? item.fragment : null" (click)="activeItem=item">{{item.name}}</a>
             <ul *ngIf="item.subMenu" [class.display_sub]="item===hoverItem">
               <li *ngFor="let itemSubMenu of item.subMenu">
-                <a routerLink="{{itemSubMenu.link}}" (click)="activeItem=item">{{itemSubMenu.name}}</a>
+                <a routerLink="{{itemSubMenu.link}}" [fragment]="itemSubMenu.fragment ? itemSubMenu.fragment : null" (click)="activeItem=item">{{itemSubMenu.name}}</a>
               </li>
             </ul>
           </li>
@@ -30,10 +30,10 @@
         <span *ngIf="item.subMenu" class="sm_sub_btn {{subMenuBar}}"
         [class.sm_sub_btn_click]="item.subMenuActive"
         (click)="sm_subMenuClick(item)"></span>
-        <a routerLink="{{item.link}}" (click)="activeItem=item">{{item.name}}</a>
+        <a routerLink="{{item.link}}" [fragment]="item.fragment ? item.fragment : null" (click)="activeItem=item">{{item.name}}</a>
         <ul *ngIf="item.subMenu" class="sm_submenu" [class.display_sub]="item.subMenuActive">
           <li *ngFor="let itemSubMenu of item.subMenu">
-            <a routerLink="{{itemSubMenu.link}}"
+            <a routerLink="{{itemSubMenu.link}}" [fragment]="itemSubMenu.fragment ? itemSubMenu.fragment : null"
             (click)="activeItem=item">{{itemSubMenu.name}}</a>
           </li>
         </ul>

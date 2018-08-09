@@ -3,9 +3,11 @@ import {Component, OnInit, ElementRef, OnDestroy} from '@angular/core';
 export class navItem {
   name: string;
   link: string;
+  fragment?: string;
   subMenu?: {
     name: string;
     link: string;
+    fragment?: string;
   }[];
   subMenuActive?: boolean;
 }
@@ -76,9 +78,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
         {
           name: "Services", link: "/services",
           subMenu: [
-            { name: "The best business services", link: "/services" },
-            { name: "How we can help?", link: "/services" },
-            { name: "Price list", link: "/services" },
+            { name: "The best business services", link: "/services", fragment: 'best-services' },
+            { name: "How we can help?", link: "/services", fragment: 'how-to-help' },
+            { name: "Price list", link: "/services", fragment: 'price-list' },
           ]
         },
         { name: "FAQS", link: "/faqs" },
