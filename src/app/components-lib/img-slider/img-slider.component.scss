@@ -27,10 +27,12 @@
 }
 
 .arrow {
-  padding: .5em 1em;
-  font-size: 1.2em;
-  border: 1px solid #eeeeff;
-  margin: 1em;
+  opacity: .25;
+  color: #3498db;
+  padding: .2em .4em;
+  font-size: 3em;
+  border: 1px solid #ddddff;
+  margin: .5em;
   border-radius: 5px;
   cursor: pointer;
   user-select: none;

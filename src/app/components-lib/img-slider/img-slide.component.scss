@@ -2,7 +2,6 @@
   display: block;
   width: 100%;
 }
-
 // .slide {
 //   padding: 1em;
 //   background: #eeeeff;
@@ -16,12 +15,19 @@
 figure {
   position: relative;
   height: 400px;
+  overflow: hidden;
+  background-color: #f8f8f8;
 }
 
 img {
   width: auto;
-  margin: 0 auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
   height: 100%;
+  min-width: 1300px;
+  @media (max-width: 767px) {
+    transform: translateX(-40%);
+  }
 }
 
 figcaption {
@@ -35,7 +41,7 @@ figcaption {
   font-size: 56px;
   line-height: 1.4;
   color: #3498db;
-  opacity: .7;
+  opacity: 0.7;
   @media (max-width: 767px) {
     width: 70%;
     font-size: 38px;
