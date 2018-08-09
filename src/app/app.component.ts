@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
   }
 
   handleRouteChange(event) {
-
     // check if url has hash
     const hasLocation = event.urlAfterRedirects.search('#');
     if ( hasLocation > -1) {
@@ -30,7 +29,9 @@ export class AppComponent implements OnInit {
       if (id) {
         const element = document.querySelector(`#${id}`);
         if (element) {
-          element.scrollIntoView();
+          element.scrollIntoView(
+            {behavior: 'smooth', block: 'start', inline: 'nearest'}
+          );
           return;
         }
       }
