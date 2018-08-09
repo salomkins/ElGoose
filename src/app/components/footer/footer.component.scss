@@ -1,0 +1,29 @@
+:host {
+  background: #f5f5f5;
+  color: #56585a;
+  font: 400 14px/28px "Roboto", sans-serif;
+  -webkit-text-size-adjust: none;
+}
+
+footer {
+  color: #888a8c;
+  background: #434547;
+}
+
+.container {
+  border-top: 1px solid #888a8c;
+}
+
+.copyright {
+  padding-top: 21px;
+  padding-bottom: 55px;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 767px) {
+   .copyright {
+    text-align: center;
+  }
+}

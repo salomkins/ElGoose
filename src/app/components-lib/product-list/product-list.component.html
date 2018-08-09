@@ -1,0 +1,15 @@
+<ng-container *ngFor="let item of list">
+  <div class="{{style}}">
+    <div class="box wow fadeInRight">
+      <div class="box_aside">
+        <div class="icon {{item.iconName}}"></div>
+      </div>
+      <div class="box_cnt__no-flow">
+        <h3 *ngIf="item.link || item.link === ''"><a routerLink={{item.link}}>{{item.caption}}</a></h3>
+        <h3 *ngIf="!item.link && item.link !== ''">{{item.caption}}</h3>
+        <p>{{item.text}}</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+</ng-container>

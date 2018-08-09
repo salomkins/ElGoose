@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  position: relative;
+}
+.message {
+  position: absolute;
+  display: block;
+  padding: 2em;
+  border: 3px solid currentColor;
+  background: #FB8C73;
+  color: #D45E56;
+  border-radius: 3px;
+  left: 0;
+  right: 0;
+}

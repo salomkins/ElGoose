@@ -1,0 +1,8 @@
+<app-map></app-map>
+ <app-footer-contacts></app-footer-contacts>
+<app-feedback *ngIf="!formType"></app-feedback>
+
+
+<app-feedback-td *ngIf="formType === 'td'"></app-feedback-td>
+<app-feedback-md *ngIf="formType === 'md'"></app-feedback-md>
+<app-feedback-reactive *ngIf="formType === 'reactive'"></app-feedback-reactive>

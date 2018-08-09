@@ -1,0 +1,281 @@
+:host {
+  background: #f5f5f5;
+  color: #56585a;
+  font: 400 14px/28px "Roboto", sans-serif;
+  -webkit-text-size-adjust: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+//sm_menu START
+
+.sm_nav_left {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  width: 240px;
+  background-color: #fff;
+  color: #56585a;
+  z-index: 9000;
+  box-shadow: 5px 0 5px 0 rgba(0,0,0,.1);
+  transition: left 0.3s;
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
+
+.sm_nav_left_on {
+  left: 0;
+}
+
+.sm_menu {
+  height: 75%;
+  margin-top: 80px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  li {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  .sm_sub_btn {
+    display: block;
+    position: absolute;
+    left: 190px;
+    top: 9px;
+    height: 30px;
+    width: 30px;
+    background-color: rgba(100, 100, 100, .2);
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 1px;
+    transition: transform 0.3s;
+
+    &_click {
+      transform: rotate(180deg);
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      background: #fff;
+    }
+
+    &:hover ~ a {
+      color: #fff;
+      background: #5ab7de;
+    }
+  }
+
+  .sm_submenu {
+    //display: none;
+    padding-left: 10px;
+    //---falšā animācija
+    display: block;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: max-height .4s ease-out;
+  }
+
+  .display_sub {
+    display: block;
+    //---falšā animācija
+    max-height: 400px;
+    transition: max-height .4s ease-in;
+
+    li {
+      background: #eee;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 10px 70px 10px 20px;
+
+    &:hover {
+      color: #fff;
+      background: #5ab7de;
+    }
+  }
+}
+
+.sm_nav_top {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  color: #000;
+  z-index: 9001;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
+  font-size: 24px;
+  padding: 15px;
+
+  .nav-btn {
+    display: block;
+    float: left;
+    cursor: pointer;
+    font-size: 28px;
+    transition: transform 0.3s;
+
+    &_click {
+      transform: rotate(-180deg);
+      transition: transform 0.3s;
+    }
+  }
+
+  .nav-btn_click {
+    transform: rotate(-180deg);
+    transition: transform 0.3s;
+  }
+
+  .nav-link {
+    display: block;
+    position: absolute;
+    left: 55px;
+    top: 15px;
+  }
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
+//sm_menu END
+.nav_box {
+  position: relative;
+  height: 80px;
+  background: rgba(0,0,0,0);
+}
+
+.stuck_container {
+  position: absolute;
+  background: #434547;
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: 0;
+  .display_sub {
+    display: block;
+  }
+}
+
+.is_stuck {
+  z-index: 9999;
+  border-bottom: 1px solid #888;
+  position: fixed;
+  top: -80px;
+  bottom: auto;
+}
+
+.is_stuck_on {
+    top: 0;
+    transition: top .5s;
+}
+
+.sf-menu {
+  display: inline-block;
+}
+
+.sf-menu:after,
+.sf-menu:before {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.sf-menu:after {
+  clear: both;
+}
+
+.sf-menu > li {
+  position: relative;
+  float: left;
+}
+
+.sf-menu a {
+  display: block;
+}
+
+.sf-menu > li > a {
+  padding: 22px 30px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-right: 1px solid #56585a;
+}
+
+.sf-active,
+.sf-menu > li > a:hover,
+.sf-menu > li.sf-hover > a {
+  color: #fff;
+  background: #5ab7de;
+}
+
+.sf-menu ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 235px;
+  background: #f5f5f5;
+  z-index: 2;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.sf-menu ul > li {
+  position: relative;
+}
+
+.sf-menu ul > li > a {
+  font-size: 16px;
+  padding: 11px 31px;
+  color: #62bfe6;
+  background: #f5f5f5;
+}
+
+.sf-menu ul > li + li {
+  border-top: 1px solid #e5e5e5;
+}
+
+.sf-menu ul > li > a:hover,
+.sf-menu ul > li.sf-hover > a {
+  color: #777777;
+}
+
+.sf-menu ul ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 235px;
+  margin-top: 0;
+  margin-left: 10px;
+  padding: 0;
+  z-index: 4;
+}
+
+// .sf-menu > li > ul > li > .sf-with-ul {
+//   position: relative;
+// }
+//
+// .sf-menu > li > ul > li > .sf-with-ul:before {
+//   position: absolute;
+//   right: 19px;
+//   top: 0;
+//   margin-left: -6px;
+//   content: "";
+//   font: 400 16px/50px "FontAwesome";
+//   color: #62bfe6;
+// }
+@media (max-width: 767px) {
+  .nav_box {
+    display: none;
+  }
+}
