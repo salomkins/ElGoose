@@ -27,6 +27,9 @@ export class ContentComponent implements OnInit {
         src: '/assets/components/content/assets/page-1_slide03.jpg',
         title: 'A wide range of global business information',
       },
+      {
+        title: 'Tikai teksts bez bildes!',
+      },
     ];
   }
 

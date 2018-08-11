@@ -1,6 +1,6 @@
 
 export class ImgSlide {
-  src: string;
+  src?: string;
   title?: string;
   text?: string;
 }
