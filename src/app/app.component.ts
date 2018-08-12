@@ -28,14 +28,14 @@ export class AppComponent implements OnInit {
       const id = event.urlAfterRedirects.substring(hasLocation + 1);
       if (id) {
         const element = document.querySelector(`#${id}`);
+        const y = element.getBoundingClientRect().top + window.pageYOffset - 50;
+        //console.log(y, element.getBoundingClientRect().top , window.pageYOffset)
         if (element) {
-          element.scrollIntoView(
-            {behavior: 'smooth', block: 'start', inline: 'nearest'}
-          );
+          window.scrollTo({behavior: 'smooth', top: y, left: 0});
           return;
         }
       }
     }
-    window.scrollTo(0, 0);
+    window.scrollTo({behavior: 'smooth', top: 0, left: 0});
   }
 }

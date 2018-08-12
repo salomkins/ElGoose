@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit,  OnDestroy } from '@angular/core';
 import { ImgSlide } from './img.slide';
 
 
@@ -8,17 +8,19 @@ import { ImgSlide } from './img.slide';
   styleUrls: ['./img-slider.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ImgSliderComponent implements OnInit {
+export class ImgSliderComponent implements OnInit, OnDestroy {
   private _slides: ImgSlide[] = [];
   private _activeSlide: ImgSlide = null;
   private _autoChangeSeconds: string | number = 0;
+
+  private  autoChangeTimer: any = null;
 
   constructor(private changeDetector: ChangeDetectorRef) {
   }
 
   ngOnInit() {
     if (+this.autoChangeSeconds >= 1) {
-      setInterval(() => {
+    this.autoChangeTimer =  setInterval(() => {
         this.setSlideActive(this.nextSlide);
         this.changeDetector.detectChanges();
       }, +this.autoChangeSeconds * 1000);
@@ -93,5 +95,9 @@ export class ImgSliderComponent implements OnInit {
     if (!this.activeSlide) {
       this.setSlideActive(null); // jo ta pati parbaude jau ir ieks setSlideActive()
     }
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.autoChangeTimer);
   }
 }
